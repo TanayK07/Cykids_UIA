@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="some_id">
+
+500
+</string>
+    <style name="cykids">
+
+        <item name="android:textSize">
+            30sp
+        </item>
+
+        <item name="android:textColor">
+            #00FF94
+        </item>
+
+    </style>
+
+</resources>
