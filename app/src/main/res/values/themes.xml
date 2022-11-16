@@ -103,9 +103,7 @@
     </style>
     <style name="level_1">
 
-        <item name="android:textSize">
-            60sp
-        </item>
+
 
         <item name="android:textColor">
             #75C8FF

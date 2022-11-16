@@ -34,6 +34,7 @@
         <!--on below line we are adding a style for MainActivity-->
 
 <activity android:name=".SplashScreenActivity"></activity>
+        <activity android:name=".Game_page"></activity>
     </application>
 
 </manifest>

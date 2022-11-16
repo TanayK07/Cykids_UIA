@@ -12,11 +12,11 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-     View btn1=(View)findViewById(R.id.rectangle_4);
+     View btn1=(View)findViewById(R.id.rectangle_5);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SplashScreenActivity.this, Game_page.class));
+                startActivity(new Intent(SplashScreenActivity.this,Game_page.class));
             }
         });
     }

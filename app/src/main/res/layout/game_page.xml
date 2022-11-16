@@ -16,12 +16,10 @@
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/greycircle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/ellipse_2"
         app:layout_constraintTop_toBottomOf="@+id/your_progre" />
 
     <View
@@ -31,8 +29,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/greycircle"
+        app:layout_constraintEnd_toStartOf="@+id/ellipse_4"
         app:layout_constraintStart_toEndOf="@+id/ellipse_"
         app:layout_constraintTop_toBottomOf="@+id/your_progre" />
 
@@ -42,16 +42,18 @@
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/greycircle"
-        app:layout_constraintStart_toEndOf="@+id/ellipse_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/your_progre" />
 
     <View
         android:id="@+id/ellipse_1"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
@@ -63,20 +65,25 @@
 
     <TextView
         android:id="@+id/some_id"
-        android:layout_width="52dp"
-        android:layout_height="51dp"
+        android:layout_width="33dp"
+        android:layout_height="36dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/gilroyextrabold"
         android:gravity="top"
         android:text="←"
         android:textAppearance="@style/back_id"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/ellipse_1"
         app:layout_constraintEnd_toEndOf="@+id/ellipse_1"
-        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/ellipse_1"
         app:layout_constraintTop_toTopOf="@+id/ellipse_1"
-        app:layout_constraintVertical_bias="0.32999998" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <View
         android:id="@+id/rectangle_3"
@@ -84,11 +91,11 @@
         android:layout_height="41dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/rect3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/son_1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/l2"
@@ -147,73 +154,76 @@
         app:layout_constraintStart_toStartOf="@+id/ellipse_2"
         app:layout_constraintTop_toTopOf="@+id/ellipse_2"
         app:layout_constraintVertical_bias="0.6" />
+
     <ImageView
         android:id="@+id/l5"
         android:layout_width="25dp"
         android:layout_height="35dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="18dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="18dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/l5"
         android:elevation="79dp"
         app:layout_constraintBottom_toBottomOf="@+id/ellipse_4"
         app:layout_constraintEnd_toEndOf="@+id/ellipse_4"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="@+id/ellipse_4"
         app:layout_constraintTop_toTopOf="@+id/ellipse_4"
         app:layout_constraintVertical_bias="0.6" />
 
     <View
         android:id="@+id/son_1"
-        android:layout_width="69dp"
-        android:layout_height="69dp"
+        android:layout_width="54dp"
+        android:layout_height="57dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/son1"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="@+id/rectangle_3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/asldk_01_2"
-        android:layout_width="match_parent"
-        android:layout_height="342dp"
+        android:layout_width="325dp"
+        android:layout_height="313dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="400dp"
         android:background="@drawable/gamcs"
         android:elevation="79dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/your_progre"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="233dp"
+        android:layout_height="38dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="140dp"
-        android:layout_marginBottom="400dp"
         android:fontFamily="@font/gilroyb"
         android:gravity="top"
         android:text="Your Progress"
         android:textAppearance="@style/your_progre"
-        app:layout_constraintBottom_toBottomOf="@+id/asldk_01_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/asldk_01_2"
-        app:layout_constraintVertical_bias="0.224" />
+        app:layout_constraintTop_toBottomOf="@+id/asldk_01_2" />
 
     <View
         android:id="@+id/ellipsde_1"
@@ -222,11 +232,12 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="80dp"
         android:background="@drawable/back"
+        app:layout_constraintEnd_toStartOf="@+id/ellipse_"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/your_progre" />
-
 
     <TextView
         android:id="@+id/l1"
@@ -243,6 +254,7 @@
         app:layout_constraintTop_toTopOf="@+id/ellipsde_1"
         app:layout_constraintVertical_bias="0.19999999" />
 
+
     <View
         android:id="@+id/ellipse_3"
         android:layout_width="60dp"
@@ -250,8 +262,11 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/greycircle"
+        app:layout_constraintEnd_toStartOf="@+id/ellipse_"
+        app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toEndOf="@+id/ellipsde_1"
         app:layout_constraintTop_toBottomOf="@+id/your_progre" />
 
@@ -264,89 +279,35 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="60dp"
         android:background="@drawable/levelrects"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ellipse_" />
-
-    <View
-        android:id="@+id/rectangle_"
-        android:layout_width="match_parent"
-        android:layout_height="83dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/levelrects"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_8" />
-
-    <TextView
-        android:id="@+id/level_"
-        android:layout_width="212dp"
-        android:layout_height="59dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="36dp"
-        android:fontFamily="@font/gilroyb"
-        android:gravity="top"
-        android:text="LEVEL 2"
-        android:textAppearance="@style/level_1"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_8"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_"
-        app:layout_constraintVertical_bias="0.541" />
-
-
-
-    <View
-        android:id="@+id/rectangle_9"
-        android:layout_width="match_parent"
-        android:layout_height="83dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/levelrects"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_" />
+        app:layout_constraintTop_toBottomOf="@+id/ellipse_"
+        app:layout_constraintVertical_bias="0.120000005" />
 
     <TextView
         android:id="@+id/level_1"
-        android:layout_width="212dp"
-        android:layout_height="59dp"
+        android:layout_width="205dp"
+        android:layout_height="53dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="36dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/gilroyb"
         android:gravity="top"
-        android:text="LEVEL 1"
+        android:text="PLAY NOW"
         android:textAppearance="@style/level_1"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_8"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_8"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_8"
         app:layout_constraintTop_toTopOf="@+id/rectangle_8" />
-
-    <TextView
-        android:id="@+id/level_3"
-        android:layout_width="215dp"
-        android:layout_height="70dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="36dp"
-        android:fontFamily="@font/gilroyb"
-        android:gravity="top"
-        android:text="LEVEL 3"
-        android:textAppearance="@style/level_1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_9"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_9" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
