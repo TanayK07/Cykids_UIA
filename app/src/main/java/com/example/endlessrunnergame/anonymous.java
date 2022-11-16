@@ -8,13 +8,13 @@ import android.graphics.BitmapFactory;
 import java.util.Random;
 
 /**This class is used to create the Rockets in the game.
- * The class Rocket is a subclass of the class Sprite.*/
+ * The class anonymous is a subclass of the class Sprite.*/
 
-public class Rocket extends Sprite {
+public class anonymous extends Sprite {
     private int speed;
     Random random = new Random();
 
-    public Rocket(Resources res, int xCoordinate, int yCoordinate, int playerScore){
+    public anonymous(Resources res, int xCoordinate, int yCoordinate, int playerScore){
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
         image = new Bitmap[13];
@@ -39,15 +39,15 @@ public class Rocket extends Sprite {
         this.speed = 15 + (random.nextInt(10) * (playerScore /10));
         if(this.speed > 100) {this.speed = 100;}
     } /**The constructor accepts an instance of the class Resources,
-     two integers which are the x- and y-coordinate of the Rocket
+     two integers which are the x- and y-coordinate of the Unknown
      and an integer which is the player's score.
 
      In the constructor, multiple Bitmaps are created using .png files located
      in the res/drawable folder and put in an array which will be used to create
-     the Rocket animation.
+     the anonymous animation.
 
-     Also, the speed of the Rocket is set using the score of the player.
-     The speed of the Rocket is never lower than 15 and never higher than 100.
+     Also, the speed of the anonymous is set using the score of the player.
+     The speed of the anonymous is never lower than 15 and never higher than 100.
      Between those values a random value is created using the player's score,
      increasing the probability of the speed being higher when the player's score increases.*/
 
@@ -57,7 +57,7 @@ public class Rocket extends Sprite {
         } else{
             frameCounter ++;
         }
-    }/** The class Rocket has a variable named frameCounter (an integer),
+    }/** The class anonymous has a variable named frameCounter (an integer),
      that it inherits from the class Sprite,
      which is used to keep track which Bitmap in the class' array is displayed.
      This variable needs to be updated to create the animation and the method
@@ -66,6 +66,6 @@ public class Rocket extends Sprite {
 
     public void updateMoving(){
         xCoordinate -= speed;
-    }/**The method updateMoving() is used to move the Rocket across the screen,
+    }/**The method updateMoving() is used to move the anonymous across the screen,
      by subtracting the int speed from the Gem's x-coordinate each time the method is called.*/
 }

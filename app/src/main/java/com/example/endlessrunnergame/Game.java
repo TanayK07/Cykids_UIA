@@ -57,5 +57,6 @@ public class Game extends Activity {
                 View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
     }/**The method hideNavigationBar is used to used to hide navigation bar of the phone.*/
+
 }
 

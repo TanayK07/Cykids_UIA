@@ -9,7 +9,7 @@ import android.graphics.BitmapFactory;
 /**This class is used to create the Helicopter in the game.
  * The class Helicopter is a subclass of the class Sprite.*/
 
-public class Helicopter extends Sprite {
+public class Bird extends Sprite {
     private boolean isGoingUp;
     private int directionY;
     private boolean isDead = false;
@@ -17,7 +17,7 @@ public class Helicopter extends Sprite {
     private boolean canMove = true;
     private int score = 0;  //score of the player
 
-    public Helicopter(Resources res){
+    public Bird(Resources res){
         xCoordinate = 50;
         yCoordinate = GameView.resolutionY * (1/4);
         directionY = 0;

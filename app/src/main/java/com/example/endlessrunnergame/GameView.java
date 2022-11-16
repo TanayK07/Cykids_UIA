@@ -19,7 +19,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceView;
 import java.util.ArrayList;
 import java.util.Random;
-
+import com.example.endlessrunnergame.MainActivity;
 
 public class GameView extends SurfaceView implements Runnable{
 
@@ -30,11 +30,11 @@ public class GameView extends SurfaceView implements Runnable{
     public static int resolutionX;
     public static int resolutionY;
     private Paint paint;
-    private Paint scorePaint;
+    static Paint scorePaint;
     private Canvas canvas;
     private Background background, mirroredBackground;
-    private Helicopter helicopter;
-    private ArrayList<Rocket> rockets;
+    private Bird bird;
+    private ArrayList<anonymous> rockets;
     private ArrayList<Ring> rings;
     private ArrayList<Gem> gems;
     private long rocketStartTime = 0;
@@ -68,8 +68,8 @@ public class GameView extends SurfaceView implements Runnable{
         matrix.setScale(-1, 1);
         mirroredBackground.background = Bitmap.createBitmap(mirroredBackgroundsOriginalBitmap, 0, 0, resolutionX, resolutionY, matrix, true);
         mirroredBackground.x = resolutionX;
-        helicopter = new Helicopter(getResources());
-        rockets = new ArrayList<Rocket>();
+        bird = new Bird(getResources());
+        rockets = new ArrayList<anonymous>();
         rocketStartTime = System.currentTimeMillis();
         rings = new ArrayList<Ring>();
         ringStartTime = System.currentTimeMillis();
@@ -77,7 +77,7 @@ public class GameView extends SurfaceView implements Runnable{
         gemStartTime = System.currentTimeMillis();
         paint = new Paint();
         scorePaint = new Paint();
-        scorePaint.setColor(Color.BLACK);
+        scorePaint.setColor(Color.WHITE);
         scorePaint.setTextSize(100);
         scorePaint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         random = new Random();
@@ -131,14 +131,14 @@ public class GameView extends SurfaceView implements Runnable{
         }
 
         //Update of Helicopter
-        helicopter.updateFrameCounter();
-        helicopter.updateMoving();
+        bird.updateFrameCounter();
+        bird.updateMoving();
 
-        //If helicopter has been hit, certain things need to happen
-        if(helicopter.isHit()){
+        //If bird has been hit, certain things need to happen
+        if(bird.isHit()){
             explosionAndDeath();
         }
-        if(helicopter.isDead()){
+        if(bird.isDead()){
             checkAndSavePotentialHighscore();
             playGameOverSound();
             exitGameSession();
@@ -146,18 +146,18 @@ public class GameView extends SurfaceView implements Runnable{
 
         //Add new rockets on timer, every other second.
         long rocketTimer = (System.currentTimeMillis() - rocketStartTime) /1000;
-        if(!helicopter.isHit()){
+        if(!bird.isHit()){
 
-            if(helicopter.getScore() >= 100){
+            if(bird.getScore() >= 100){
                 if(rocketTimer > 1){
-                    rockets.add(new Rocket(getResources(), resolutionX, random.nextInt(resolutionY - 30), helicopter.getScore()));
+                    rockets.add(new anonymous(getResources(), resolutionX, random.nextInt(resolutionY - 30), bird.getScore()));
                     playRocketSound();
                     rocketStartTime = System.currentTimeMillis(); //reset timer each time a rocket is added
                 }
             }
-            if(helicopter.getScore() < 100){
+            if(bird.getScore() < 100){
                 if(rocketTimer > 2){
-                    rockets.add(new Rocket(getResources(), resolutionX, random.nextInt(resolutionY - 30), helicopter.getScore()));
+                    rockets.add(new anonymous(getResources(), resolutionX, random.nextInt(resolutionY - 30), bird.getScore()));
                     playRocketSound();
                     rocketStartTime = System.currentTimeMillis(); //reset timer each time a rocket is added
                 }
@@ -166,18 +166,18 @@ public class GameView extends SurfaceView implements Runnable{
 
         //Add new rings on timer, every third second.
         long ringTimer = (System.currentTimeMillis() - ringStartTime) / 1000;
-        if(!helicopter.isDead()){
+        if(!bird.isDead()){
             if(ringTimer > 3){
-                rings.add(new Ring(getResources(), resolutionX, random.nextInt(resolutionY - 30), helicopter.getScore()));
+                rings.add(new Ring(getResources(), resolutionX, random.nextInt(resolutionY - 30), bird.getScore()));
                 ringStartTime = System.currentTimeMillis();
             }
         }
 
         //Add new gems on timer, every tenth second
         long gemTimer = (System.currentTimeMillis() - gemStartTime) / 1000;
-        if(!helicopter.isDead()){
+        if(!bird.isDead()){
             if(gemTimer > 10){
-                gems.add(new Gem(getResources(), resolutionX, random.nextInt(resolutionY - 30), helicopter.getScore()));
+                gems.add(new Gem(getResources(), resolutionX, random.nextInt(resolutionY - 30), bird.getScore()));
                 gemStartTime = System.currentTimeMillis();
             }
         }
@@ -187,19 +187,19 @@ public class GameView extends SurfaceView implements Runnable{
             rockets.get(i).updateFrameCounter(); //Update their animations
             rockets.get(i).updateMoving(); //Update their positions
 
-            //If a rocket hits the helicopter, the game is over.
-            if(spritesIntersects(rockets.get(i), helicopter)){
+            //If a rocket hits the bird, the game is over.
+            if(spritesIntersects(rockets.get(i), bird)){
                 rockets.remove(i);
-                helicopter.setHit(true);
-                helicopter.setCanMove(false);
+                bird.setHit(true);
+                bird.setCanMove(false);
                 break;
             }
 
-            //If a rocket moves of screen, remove it and add score to helicopter for dodging the rocket.
+            //If a rocket moves of screen, remove it and add score to bird for dodging the rocket.
             if(rockets.get(i).getxCoordinate() < - 150){
                 rockets.remove(i);
-                helicopter.addToScore(1);
-                System.out.println(helicopter.getScore());
+                bird.addToScore(1);
+                System.out.println(bird.getScore());
                 break;
             }
         }
@@ -209,11 +209,11 @@ public class GameView extends SurfaceView implements Runnable{
             rings.get(i).updateFrameCounter();
             rings.get(i).updateMoving();
 
-            //If a ring is collected by the helicopter, remove it and increase score of helicopter.
-            if(spritesIntersects(rings.get(i), helicopter)){
+            //If a ring is collected by the bird, remove it and increase score of bird.
+            if(spritesIntersects(rings.get(i), bird)){
                 playRingSound();
                 rings.remove(i);
-                helicopter.addToScore(2);
+                bird.addToScore(2);
                 break;
             }
 
@@ -229,11 +229,11 @@ public class GameView extends SurfaceView implements Runnable{
             gems.get(i).updateFrameCounter();
             gems.get(i).updateMoving();
 
-            //If a gem is collected by the helicopter, remove it and increase score of helicopter.
-            if(spritesIntersects(gems.get(i), helicopter)){
+            //If a gem is collected by the bird, remove it and increase score of bird.
+            if(spritesIntersects(gems.get(i), bird)){
                 playRingSound();
                 gems.remove(i);
-                helicopter.addToScore(10);
+                bird.addToScore(10);
                 break;
             }
 
@@ -248,10 +248,11 @@ public class GameView extends SurfaceView implements Runnable{
         if(explosionIsCreated){
             explosion.updateFrameCounter();
             if (explosion.getFrameCounter() == 21){
-                helicopter.setBlank(getResources());
+                bird.setBlank(getResources());
             }
             if(explosion.getFrameCounter() == 42){
-                helicopter.setDead(true);
+                bird.setDead(true);
+
             }
         }
     } /** The method update is called from the method run.
@@ -261,12 +262,12 @@ public class GameView extends SurfaceView implements Runnable{
      *
      * I will not write out everything that is done in the method update, but here are a few examples:
      * - The coordinates of the background are updated, in order to make it moving.
-     * - For the helicopter, the coordinates are updated and the current Bitmap that is to be displayed is updated.
+     * - For the bird, the coordinates are updated and the current Bitmap that is to be displayed is updated.
      * - On timers, Rings, Rockets and Gems are created.
      * - The ArrayLists containing Rings, Rockets and Gems are iterated through to (among many things):
      *      - update their coordinates;
      *      - update the Bitmap to be displayed for each of them;
-     *      - check for collisions with the helicopter;
+     *      - check for collisions with the bird;
      *      - and check if they have moved off the left side of the screen, and then remove them.
      * - It is also checked if an explosion has been created and if so, the Bitmap to displayed for it is updated.
      * */
@@ -276,7 +277,7 @@ public class GameView extends SurfaceView implements Runnable{
             canvas = getHolder().lockCanvas();
             canvas.drawBitmap(background.background, background.x, background.y, paint);
             canvas.drawBitmap(mirroredBackground.background, mirroredBackground.x, mirroredBackground.y, paint);
-            canvas.drawBitmap(helicopter.getImage(), helicopter.getxCoordinate(), helicopter.getyCoordinate(), paint);
+            canvas.drawBitmap(bird.getImage(), bird.getxCoordinate(), bird.getyCoordinate(), paint);
             for(int i = 0; i < rockets.size(); i++){
                 canvas.drawBitmap(rockets.get(i).getImage(), rockets.get(i).getxCoordinate(), rockets.get(i).getyCoordinate(), paint);
             }
@@ -289,7 +290,7 @@ public class GameView extends SurfaceView implements Runnable{
             if(explosionIsCreated){
                 canvas.drawBitmap(explosion.getImage(), explosion.getxCoordinate(), explosion.getyCoordinate(), paint);
             }
-            canvas.drawText("Score: " + helicopter.getScore(), resolutionX * 1/2, 100, scorePaint);
+            canvas.drawText("Score: " + bird.getScore(), resolutionX * 1/2, 100, scorePaint);
             getHolder().unlockCanvasAndPost(canvas);
         }
     } /**The method draw is called from the method run.
@@ -309,18 +310,18 @@ public class GameView extends SurfaceView implements Runnable{
 
     private void explosionAndDeath(){
         if( explosionIsCreated == false){
-            int helicoptercenterx = helicopter.getxCoordinate() + (helicopter.getWidth() / 2);
-            int helicoptercentery = helicopter.getyCoordinate() + (helicopter.getHeight() / 2);
-            explosion = new Explosion(getResources(), helicoptercenterx, helicoptercentery);
+            int birdcenterx = bird.getxCoordinate() + (bird.getWidth() / 2);
+            int birdcentery = bird.getyCoordinate() + (bird.getHeight() / 2);
+            explosion = new Explosion(getResources(), birdcenterx, birdcentery);
             explosionIsCreated = true;
             mediaPlayer.reset();
             playExplosionSound();
         }
-    } /**The method explosionAndDeath is called from the method update if the helicopter has been hit,
+    } /**The method explosionAndDeath is called from the method update if the bird has been hit,
      * either by a rocket or crashing to the bottom of the screen.
      * The functionality in the method explosionAndDeath are supposed to be called only once
      * and are done so only if the boolean explosionIsCreated is equal to false.
-     * If explosionIsCreated is false, an explosion is created at the location of the helicopter
+     * If explosionIsCreated is false, an explosion is created at the location of the bird
      * and an explosion sound is played using the method playExplosionSound.
      * */
 
@@ -332,17 +333,17 @@ public class GameView extends SurfaceView implements Runnable{
         }
     }/** The method spritesIntersects is called multiple times from the method update.
      * It is used to detect if the objects/sprites in the game have collided with each other.
-     * E.g. if the helicopter has caught a gem or the helicopter has been hit by a rocket.
+     * E.g. if the bird has caught a gem or the bird has been hit by a rocket.
      * */
 
     private void checkAndSavePotentialHighscore(){
-        if(preferences.getInt("highscore", 0) < helicopter.getScore()){
+        if(preferences.getInt("highscore", 0) < bird.getScore()){
             SharedPreferences.Editor editor = preferences.edit();
-            editor.putInt("highscore", helicopter.getScore());
+            editor.putInt("highscore", bird.getScore());
             editor.apply();
         }
     } /**The method checkAndSavePotentialHighscore is called from the method update.
-     * The method is called if the game-session has ended, or more specifically if the helicopter is dead.
+     * The method is called if the game-session has ended, or more specifically if the bird is dead.
      * The method saves the score of the game-session as highscore, if it is higher than the previously saved highscore.
      */
 
@@ -350,16 +351,16 @@ public class GameView extends SurfaceView implements Runnable{
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
-                helicopter.setGoingUp(true);
+                bird.setGoingUp(true);
                 break;
             case MotionEvent.ACTION_UP:
-                helicopter.setGoingUp(false);
+                bird.setGoingUp(false);
                 break;
         }
         return true;
     } /**The method onTouchEvent is called every time the user touches the screen.
-     * If the user is pressing down on the screen, the helicopter moves upwards.
-     * If the user lets go of the screen, the helicopter moves downwards.
+     * If the user is pressing down on the screen, the bird moves upwards.
+     * If the user lets go of the screen, the bird moves downwards.
      * */
 
     private void playExplosionSound(){
@@ -407,12 +408,12 @@ public class GameView extends SurfaceView implements Runnable{
         try {
             gameActive = false;
             Thread.sleep(3000);
-            game.startActivity(new Intent(game, MainActivity.class));
-            game.finish();
+            game.startActivity(new Intent(game, MainActivity2.class));
+//            game.finish();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    } /**The method exitGameSession is called from the method update if the helicopter is dead (has crashed or been hit by a rocket).
+    } /**The method exitGameSession is called from the method update if the bird is dead (has crashed or been hit by a rocket).
      * In the method exitGameSession, the boolean gameActive is set to false in order to break the loop in the method update.
      * The Thread thread is set to sleep/wait for 3 seconds (in order to let the "game over" sound play).
      * The user is returned to the menu using the class MainActivity, which is displayed using an Intent from the class Game.
