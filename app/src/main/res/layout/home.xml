@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/relativeLayout"
+    tools:context=".SplashScreenActivity"
 
     android:background="#282828">
 
@@ -114,21 +115,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_1"/>
-
-    <View
-        android:id="@+id/image_2"
-        android:layout_width="325dp"
-        android:layout_height="307dp"
-        android:background="@drawable/img2"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_4"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_4"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_4"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_1"/><![CDATA[
 
 
     />
+
+    ]]>
+
+    <View
+        android:id="@+id/image_2"
+        android:layout_width="280dp"
+        android:layout_height="259dp"
+        android:background="@drawable/img2"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_4"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_4"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_4"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_4"
+        app:layout_constraintVertical_bias="1.0" />
 
     <View
         android:id="@+id/rectangle_5"
@@ -172,7 +176,8 @@
         android:textAppearance="@style/game"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_5"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_5"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_5" /><![CDATA[
+        app:layout_constraintTop_toTopOf="@+id/rectangle_5"
+        app:layout_constraintVertical_bias="0.26" /><![CDATA[
     />
 
 
@@ -274,17 +279,20 @@
 
     <View
         android:id="@+id/rectanglaboutus"
-        android:layout_width="356dp"
-        android:layout_height="61dp"
+        android:layout_width="373dp"
+        android:layout_height="48dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/rectaboutus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_6"
+        app:layout_constraintVertical_bias="0.97" />
 
     <TextView
         android:id="@+id/cykids"
