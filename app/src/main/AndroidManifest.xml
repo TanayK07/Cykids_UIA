@@ -35,6 +35,8 @@
 
 <activity android:name=".SplashScreenActivity"></activity>
         <activity android:name=".Game_page"></activity>
+        <activity android:name=".Quiz_page"></activity>
+        <activity android:name=".About_us"></activity>
     </application>
 
 </manifest>
