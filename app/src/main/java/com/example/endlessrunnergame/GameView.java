@@ -139,7 +139,7 @@ public class GameView extends SurfaceView implements Runnable{
             explosionAndDeath();
         }
         if(bird.isDead()){
-            checkAndSavePotentialHighscore();
+//            checkAndSavePotentialHighscore();
             playGameOverSound();
             exitGameSession();
         }
@@ -336,13 +336,14 @@ public class GameView extends SurfaceView implements Runnable{
      * E.g. if the bird has caught a gem or the bird has been hit by a rocket.
      * */
 
-    private void checkAndSavePotentialHighscore(){
-        if(preferences.getInt("highscore", 0) < bird.getScore()){
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putInt("highscore", bird.getScore());
-            editor.apply();
-        }
-    } /**The method checkAndSavePotentialHighscore is called from the method update.
+//    private void checkAndSavePotentialHighscore(){
+//        if(preferences.getInt("highscore", 0) < bird.getScore()){
+//            SharedPreferences.Editor editor = preferences.edit();
+//            editor.putInt("highscore", bird.getScore());
+//            editor.apply();
+//        }
+//    }
+    /**The method checkAndSavePotentialHighscore is called from the method update.
      * The method is called if the game-session has ended, or more specifically if the bird is dead.
      * The method saves the score of the game-session as highscore, if it is higher than the previously saved highscore.
      */
@@ -409,7 +410,7 @@ public class GameView extends SurfaceView implements Runnable{
             gameActive = false;
             Thread.sleep(3000);
             game.startActivity(new Intent(game, MainActivity2.class));
-//            game.finish();
+            game.finish();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

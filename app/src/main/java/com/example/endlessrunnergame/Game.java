@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Display;
 import android.view.View;
+import android.content.Intent;
 
 /**This class extends the class Activity and is used to create a "game-session" when the user chooses to do so from the menu in the game. */
 
@@ -58,5 +59,9 @@ public class Game extends Activity {
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
     }/**The method hideNavigationBar is used to used to hide navigation bar of the phone.*/
 
+    protected void gameover(){
+        Intent intent = new Intent(Game.this,MainActivity2.class);
+        startActivity(intent);
+    }
 }
 

@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         /**Below, an instance of the class SharedPreferences is created and used to retrieve the high score from previous game-sessions.
          * Also, soundMuted is set to the value that it was the last time the game was played.*/
         final SharedPreferences preferences = getSharedPreferences("game", MODE_PRIVATE);
-        TextView highScoreText = findViewById(R.id.highScoreText);
-        highScoreText.setText("Highscore: " + preferences.getInt("highscore", 0));
+//        TextView highScoreText = findViewById(R.id.highScoreText);
+//        highScoreText.setText("Highscore: " + preferences.getInt("highscore", 0));
         soundMuted = preferences.getBoolean("soundMuted", false);
 
         /**Below, the ImageView volume is created and set to the ImageView volumeController defined in the file activity_main.xml .*/
