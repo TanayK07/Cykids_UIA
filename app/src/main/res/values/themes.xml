@@ -132,4 +132,37 @@
         </item>
 
     </style>
+    <style name="question_1_">
+
+        <item name="android:textSize">
+            22.57sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+    <style name="what_asjnak">
+
+    <item name="android:textSize">
+        22.57sp
+    </item>
+
+    <item name="android:textColor">
+        #FFFFFF
+    </item>
+
+</style>
+    <style name="option1">
+
+        <item name="android:textSize">
+            22.57sp
+        </item>
+
+        <item name="android:textColor">
+            @color/black
+        </item>
+
+    </style>
 </resources>
