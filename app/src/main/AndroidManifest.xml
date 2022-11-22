@@ -35,13 +35,8 @@
         <activity
             android:name=".GameMain"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.noActionBar"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.noActionBar" />
+        
         <activity android:name=".GameActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.noActionBar"/>
