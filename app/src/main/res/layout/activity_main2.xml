@@ -15,29 +15,26 @@
         android:scaleType="centerCrop"
         android:src="@drawable/cyberbackground" />
 
-    <TextView
-        android:id="@+id/highScoreText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="20dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        android:text="High Score"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+<!--    <TextView-->
+<!--        android:id="@+id/highScoreText"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginVertical="20dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginEnd="27dp"-->
+<!--        android:text="High Score"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:textSize="20sp" />-->
 
     <TextView
         android:id="@+id/Gameover"
         android:layout_width="wrap_content"
         android:layout_height="53dp"
         android:layout_centerInParent="true"
-        android:text="GAMEOVER"
+        android:text="@string/GAMEOVER"
         android:textAlignment="center"
         android:textColor="#FBFAFA"
         android:textSize="24sp"
@@ -50,7 +47,7 @@
         android:layout_alignTop="@+id/Gameover"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
-        android:text="Moral: Never respond/send messages to unknown people. Inform elders if you receive any anonymous messages"
+        android:text="@string/Moral"
         android:textAlignment="center"
         android:textColor="#FBFAFA"
         android:textSize="20sp"
@@ -64,7 +61,7 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="69dp"
         android:backgroundTint="#FFFFFF"
-        android:text="Play again"
+        android:text="@string/play_again"
         android:textColor="@color/not_pure_black" />
     <!--    one more button to return to home screen needs to be added-->
 

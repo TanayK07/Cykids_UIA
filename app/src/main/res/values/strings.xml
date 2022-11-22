@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EndlessRunnerGame</string>
+    <string name = "start_game">Decide whose messages you can accept</string>
+    <string name = "play_again">Play Again</string>
+    <string name = "GAMEOVER">GAMEOVER</string>
+    <string name="Moral">Moral: Never respond/send messages to unknown people. Inform elders if you receive any anonymous messages</string>
 </resources>

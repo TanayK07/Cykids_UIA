@@ -35,18 +35,14 @@
         android:layout_width="459dp"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginHorizontal="40dp"
         android:layout_marginVertical="40dp"
         android:layout_marginStart="142dp"
-        android:layout_marginLeft="142dp"
         android:layout_marginEnd="130dp"
-        android:layout_marginRight="130dp"
         android:layout_marginBottom="44dp"
-        android:text="Decide whose messages you can accept"
+        android:text="@string/start_game"
         android:textColor="#FBFAFA"
         android:textSize="24sp" />
 
@@ -55,12 +51,10 @@
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="20dp"
         android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
         android:layout_marginTop="23dp"
         android:src="@drawable/ic_volume_up_black_24dp" />
 

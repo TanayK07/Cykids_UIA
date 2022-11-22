@@ -58,10 +58,10 @@ public class Game extends Activity {
                 View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
     }/**The method hideNavigationBar is used to used to hide navigation bar of the phone.*/
-
-    protected void gameover(){
+    public void startActivity(){
         Intent intent = new Intent(Game.this,MainActivity2.class);
         startActivity(intent);
     }
+
 }
 

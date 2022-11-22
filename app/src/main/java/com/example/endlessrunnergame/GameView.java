@@ -414,7 +414,8 @@ public class GameView extends SurfaceView implements Runnable{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    } /**The method exitGameSession is called from the method update if the bird is dead (has crashed or been hit by a rocket).
+    }
+    /**The method exitGameSession is called from the method update if the bird is dead (has crashed or been hit by a rocket).
      * In the method exitGameSession, the boolean gameActive is set to false in order to break the loop in the method update.
      * The Thread thread is set to sleep/wait for 3 seconds (in order to let the "game over" sound play).
      * The user is returned to the menu using the class MainActivity, which is displayed using an Intent from the class Game.
