@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#282828"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="5dp"
+        android:text="Game Over!"
+        android:textColor="#c4572f"
+        android:background="@drawable/my_btn"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Score: 1"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="#fff"
+        android:layout_below="@id/result"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
+    <ImageView
+        android:id="@+id/replay"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_baseline_close_24"
+        android:background="@drawable/eclipse"
+        android:backgroundTint="#c93b30"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/score"
+        android:layout_centerHorizontal="true"
+        android:padding="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/my_btn">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/info"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/ic_baseline_info_24"
+                android:background="@drawable/eclipse"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Malware"
+                android:textStyle="bold"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="* Virus corrupt computer file and apps"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="* Keep latest antivirus installed"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="* Always keep firewalls on"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="* Trojan can give a hacker access to your computer"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="* External drives and internet are sources of viruses"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"/>
+        <TextView
+            android:id="@+id/learnMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/my_btn"
+            android:backgroundTint="#75C8FF"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Learn more..."
+            android:textColor="#fff"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

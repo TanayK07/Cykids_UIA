@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_main);
-
+        
         // on below line we are calling handler to run a task
         // for specific time interval
         new Handler().postDelayed(new Runnable() {
@@ -26,15 +26,17 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 // on below line we are
                 // creating a new intent
-                Intent i = new Intent(MainActivity.this, SplashScreenActivity.class);
+                try {
+                    startActivity(new Intent(MainActivity.this, SplashScreenActivity.class));
 
-                // on below line we are
-                // starting a new activity.
-                startActivity(i);
+                    // on the below line we are finishing
+                    // our current activity.
+                    finish();
+                } catch (Exception e) {
+                    System.out.println("Starting error log");
+                    System.out.println(e.getMessage());
+                }
 
-                // on the below line we are finishing
-                // our current activity.
-                finish();
             }
         }, 2000);
 
