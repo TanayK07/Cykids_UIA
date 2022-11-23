@@ -14,7 +14,7 @@ public class Game_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_page);
 
-        findViewById(R.id.rectangle_8).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.rectangle_).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Game_page.this, GameMain.class));
@@ -22,10 +22,17 @@ public class Game_page extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.level_2).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.rectangle_8).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Game_page.this, levelTwoGame.class));
+                finish();
+            }
+        });
+        findViewById(R.id.rectangle_12).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Game_page.this, memory_game_level1.class));
                 finish();
             }
         });
