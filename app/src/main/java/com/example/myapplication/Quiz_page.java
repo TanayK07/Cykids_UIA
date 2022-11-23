@@ -13,7 +13,7 @@ public class Quiz_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_page);
         View btn_quizplay=(View)findViewById(R.id.rectangle_9 );
-
+        View btn_back = (View)findViewById(R.id.ellipse_1);
 
 
            btn_quizplay.setOnClickListener(new View.OnClickListener() {
@@ -22,7 +22,12 @@ public class Quiz_page extends AppCompatActivity {
                     startActivity(new Intent(Quiz_page.this,Quiz_play.class));
                 }
             });
-
+            btn_back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(Quiz_page.this,SplashScreenActivity.class));
+                }
+            });
     }
 
 }

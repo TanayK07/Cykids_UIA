@@ -36,6 +36,12 @@ public class Game_page extends AppCompatActivity {
                 finish();
             }
         });
+        findViewById(R.id.ellipse_1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Game_page.this,SplashScreenActivity.class));
+            }
+        });
     }
 }
 

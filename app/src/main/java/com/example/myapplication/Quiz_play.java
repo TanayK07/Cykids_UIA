@@ -17,7 +17,7 @@ public class Quiz_play extends AppCompatActivity {
         View btn_option1=(View)findViewById(R.id.rectangsfhjkdle_1);
         View btn_option2=(View)findViewById(R.id.rectangsfhjkdle_);
         View btn_option3=(View)findViewById(R.id.rectangsfhjkdle_2);
-
+        View btn_back = (View)findViewById(R.id.ellipse_1);
         int key=-1;
         //if btn_option1 is clicked call func_correctquiz1()
         btn_option1.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +38,12 @@ public class Quiz_play extends AppCompatActivity {
                 startActivity(new Intent(Quiz_play.this,Quiz_play_1_display.class));
             }
         });
-
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_play.this,Quiz_page.class));
+            }
+        });
     }
 
     public void func_correctquiz1() {
