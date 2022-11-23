@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativeLayout"
+    tools:context=".Game_page"
+
+    android:background="#282828">
+
+
+    <View
+        android:id="@+id/rectangle_10"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="128dp"
+        android:background="@drawable/levelrects"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/level_1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/rectangle_"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="128dp"
+        android:background="@drawable/levelrects"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_8" />
+
+    <View
+        android:id="@+id/rectangle_11"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/levelrects"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_10" />
+
+    <View
+        android:id="@+id/ellipse_1"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/some_id"
+        android:layout_width="33dp"
+        android:layout_height="36dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/gilroyextrabold"
+        android:gravity="top"
+        android:text="←"
+        android:textAppearance="@style/back_id"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ellipse_1"
+        app:layout_constraintEnd_toEndOf="@+id/ellipse_1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ellipse_1"
+        app:layout_constraintTop_toTopOf="@+id/ellipse_1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/rectangle_3"
+        android:layout_width="57dp"
+        android:layout_height="41dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rect3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/son_1"
+        android:layout_width="54dp"
+        android:layout_height="57dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/son1"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/asldk_01_2"
+        android:layout_width="134dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="400dp"
+        android:background="@drawable/lock"
+        android:elevation="79dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.794" />
+
+    <TextView
+        android:id="@+id/your_progre"
+        android:layout_width="233dp"
+        android:layout_height="38dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="140dp"
+        android:fontFamily="@font/gilroyb"
+        android:gravity="top"
+        android:text="Learn Now"
+        android:textAppearance="@style/your_progre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/asldk_01_2" />
+
+
+    <View
+        android:id="@+id/rectangle_8"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="240dp"
+        android:background="@drawable/levelrects"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/level_1"
+        android:layout_width="205dp"
+        android:layout_height="53dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/gilroyb"
+        android:text="BASIC"
+        android:textAlignment="center"
+        android:textAppearance="@style/level_1"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_8"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_8"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_8"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_8"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/level_"
+        android:layout_width="293dp"
+        android:layout_height="46dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/gilroyb"
+        android:text="INTER"
+        android:textAlignment="center"
+        android:textAppearance="@style/level_1"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_" />
+
+    <TextView
+        android:id="@+id/level_2"
+        android:layout_width="205dp"
+        android:layout_height="53dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/gilroyb"
+        android:text="ADVANCE"
+        android:textAlignment="center"
+        android:textAppearance="@style/level_1"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_11"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_11"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_11"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_11" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

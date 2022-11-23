@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#282828"
+    android:padding="16dp"
+    tools:context=".GameMain">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:text="Malicious Attack"
+        android:textColor="#fff"
+        android:layout_below="@id/level"
+        android:layout_marginTop="12dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/worm"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/worm1" />
+    <ImageView
+        android:id="@+id/virus"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/virus1" />
+    <ImageView
+        android:id="@+id/trojan"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/trojan1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Worm"
+        android:textColor="#fff"
+        android:layout_marginStart="12dp"
+        android:layout_below="@id/worm"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Virus"
+        android:textColor="#fff"
+        android:layout_below="@id/virus"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Trojan"
+        android:textColor="#fff"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@id/virus"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:id="@+id/level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="Level 1"
+        android:textColor="#75C8FF"
+        android:background="@drawable/my_btn"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/highScoreTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="High Score"
+        android:textColor="#fff"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/volumeCtrl"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_volume_up_black_24dp" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/eclipse"
+        android:src="@drawable/ic_baseline_arrow_back_24" />
+
+    <TextView
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/eclipse"
+        android:padding="8dp"
+        android:text="Play"
+        android:textColor="#fff"
+        android:textSize="22sp" />
+</RelativeLayout>
