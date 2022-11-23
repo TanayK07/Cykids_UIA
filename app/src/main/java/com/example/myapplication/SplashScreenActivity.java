@@ -52,8 +52,8 @@ public class SplashScreenActivity extends AppCompatActivity {
         if(isTimeUp == false){
             timer(timeStarted);
         }
-        isTimeUp = false;*/
-
+        isTimeUp = false;
+*/
         View btn_play=(View)findViewById(R.id.rectangle_5);
         View btn_quiz=(View)findViewById(R.id.rectangle_6);
         View btn_about=(View)findViewById(R.id.rectanglaboutus);

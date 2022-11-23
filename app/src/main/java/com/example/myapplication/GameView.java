@@ -27,6 +27,7 @@ public class GameView extends SurfaceView implements Runnable {
     public static int score=0;
     public static float screenRatioX, screenRatioY;
     private Paint paint;
+    private Paint rectPaint;
     private Malware[] malwares;
     private SharedPreferences prefs;
     private Random random;
@@ -38,6 +39,7 @@ public class GameView extends SurfaceView implements Runnable {
     private Background background1, background2;
     public static float speedRation;
     MediaPlayer mediaPlayer;
+    private File files;
 
     public GameView(GameActivity activity, int screenX, int screenY) {
         super(activity);
@@ -81,6 +83,10 @@ public class GameView extends SurfaceView implements Runnable {
         paint.setTextSize(128);
         paint.setColor(Color.WHITE);
 
+        rectPaint = new Paint();
+        rectPaint.setStyle(Paint.Style.FILL);
+        rectPaint.setColor(Color.parseColor("#ffffff"));
+
         malwares = new Malware[3];
 
         Worm worm = new Worm(getResources());
@@ -91,6 +97,8 @@ public class GameView extends SurfaceView implements Runnable {
         malwares[2] = virus;
         random = new Random();
 
+        files = new File(getResources());
+        System.out.println(files.file1.getHeight());
         mediaPlayer = MediaPlayer.create(activity, R.raw.game1music);
         if(!prefs.getBoolean("soundMuted", false)){
             mediaPlayer.start();
@@ -110,7 +118,7 @@ public class GameView extends SurfaceView implements Runnable {
     }
 
     private void update () {
-        background1.x -= 2.5 * screenRatioX;
+        /*background1.x -= 2.5 * screenRatioX;
         background2.x -= 2.5 * screenRatioX;
 
         if (background1.x + background1.background.getWidth() < 0) {
@@ -119,7 +127,7 @@ public class GameView extends SurfaceView implements Runnable {
 
         if (background2.x + background2.background.getWidth() < 0) {
             background2.x = screenX;
-        }
+        }*/
 
         if (flight.isGoingUp)
             flight.y -= 30 * screenRatioY;
@@ -189,10 +197,28 @@ public class GameView extends SurfaceView implements Runnable {
             canvas.drawBitmap(background1.background, background1.x, background1.y, paint);
             canvas.drawBitmap(background2.background, background2.x, background2.y, paint);
 
+            canvas.drawText(score + "", screenX / 2f, 164, paint);
+
+            for (Malware malware : malwares){
+                if(malware.x >= 0){
+                    if(malware.x <= GameActivity.point.x/6){
+                        rectPaint.setColor(Color.parseColor("#f05a4d"));
+                        break;
+                    }
+                    else{
+                        rectPaint.setColor(Color.parseColor("#ffffff"));
+                    }
+                }
+
+            }
+            canvas.drawRect(new Rect(0, 0, GameActivity.point.x/6, GameActivity.point.y), rectPaint);
             for (Malware malware : malwares)
                 canvas.drawBitmap(malware.getMalware(), malware.x, malware.y, paint);
 
-            canvas.drawText(score + "", screenX / 2f, 164, paint);
+            System.out.println(activity.point.y*3/8 - (File.iconSize/2));
+            canvas.drawBitmap(files.file1, GameActivity.point.x/6/2-(File.iconSize/2), GameActivity.point.y/8-(File.iconSize/2), paint);
+            canvas.drawBitmap(files.file2, GameActivity.point.x/6/2-(File.iconSize/2), GameActivity.point.y*3/8-(File.iconSize/2), paint);
+            canvas.drawBitmap(files.file3, GameActivity.point.x/6/2-(File.iconSize/2), GameActivity.point.y*5/8-(File.iconSize/2), paint);
 
             if (isGameOver) {
                 isPlaying = false;
