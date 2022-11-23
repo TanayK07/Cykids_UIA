@@ -20,7 +20,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-        /* prefs = getSharedPreferences("game", MODE_PRIVATE);
+       /* prefs = getSharedPreferences("game", MODE_PRIVATE);
         long timeStarted = prefs.getLong("timeStarted", 0);
 
         if(timeStarted == 0){
