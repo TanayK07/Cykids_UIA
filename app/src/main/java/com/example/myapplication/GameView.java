@@ -9,6 +9,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Build;
 import android.view.MotionEvent;
@@ -35,12 +36,14 @@ public class GameView extends SurfaceView implements Runnable {
     private Flight flight;
     private GameActivity activity;
     private Background background1, background2;
+    public static float speedRation;
+    MediaPlayer mediaPlayer;
 
     public GameView(GameActivity activity, int screenX, int screenY) {
         super(activity);
 
         this.activity = activity;
-
+        speedRation = GameActivity.point.x / 40;
         prefs = activity.getSharedPreferences("game", Context.MODE_PRIVATE);
 
 
@@ -88,11 +91,18 @@ public class GameView extends SurfaceView implements Runnable {
         malwares[2] = virus;
         random = new Random();
 
+        mediaPlayer = MediaPlayer.create(activity, R.raw.game1music);
+        if(!prefs.getBoolean("soundMuted", false)){
+            mediaPlayer.start();
+        }
     }
 
     @Override
     public void run() {
         while (isPlaying) {
+            if(!mediaPlayer.isPlaying() && (!prefs.getBoolean("soundMuted", false))){
+                mediaPlayer.start();
+            }
             update ();
             draw ();
             sleep ();
@@ -114,7 +124,7 @@ public class GameView extends SurfaceView implements Runnable {
         if (flight.isGoingUp)
             flight.y -= 30 * screenRatioY;
         else
-            flight.y += 7.5 * screenRatioY;
+            flight.y += GameActivity.point.y/45;
 
         if (flight.y < 0)
             flight.y = 0;
@@ -157,16 +167,13 @@ public class GameView extends SurfaceView implements Runnable {
                     isGameOver = true;
                     return;
                 }
-
-                int bound = (int) (10 * screenRatioX);
+                int bound = (int) (speedRation * 0.5);
                 malware.speed = random.nextInt(bound);
 
-                if (malware.speed < 2.5 * screenRatioX)
-                    malware.speed = (int) (2.5 * screenRatioX);
-
+                if (malware.speed < speedRation/4)
+                    malware.speed = (int) speedRation/4;
                 malware.x = screenX;
                 malware.y = random.nextInt(screenY - (int)(malware.height * 1.25));
-
                 malware.wasShot = false;
             }
 
@@ -212,6 +219,7 @@ public class GameView extends SurfaceView implements Runnable {
         try {
             Thread.sleep(3000);
             GameMain.isGameOver = true;
+            mediaPlayer.stop();
             activity.startActivity(new Intent(activity, GameMain.class));
             activity.finish();
         } catch (InterruptedException e) {
