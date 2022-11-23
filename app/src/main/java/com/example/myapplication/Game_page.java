@@ -75,7 +75,7 @@ public class Game_page extends AppCompatActivity {
         findViewById(R.id.rectangle_8).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Game_page.this, levelTwoGame.class));
+                startActivity(new Intent(Game_page.this, Level_1_waiting.class));
                 soundPool.play(button_music, 1, 1, 0, 0, 1);
                 finish();
             }
