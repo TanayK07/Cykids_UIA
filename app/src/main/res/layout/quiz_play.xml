@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/relativeLayout"
-    tools:context=".Quiz_page"
+    tools:context=".Quiz_play_2"
 
     android:background="#282828">
 
@@ -163,7 +163,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:gravity="top"
-        android:text="12"
+        android:text="10"
         android:textAppearance="@style/some_id"
         android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="@+id/ellipse_8"
@@ -180,11 +180,29 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:gravity="top"
-        android:text="Question 1:"
+        android:text="Question 2:"
         android:textAppearance="@style/question_1_"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ellipse_8" />
 
+    <ImageView
+        android:id="@+id/asldk_01_2"
+        android:layout_width="152dp"
+        android:layout_height="137dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="400dp"
+        android:background="@drawable/padlock"
+        android:elevation="79dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88" />
     <TextView
         android:id="@+id/what_asjnak"
         android:layout_width="337dp"
@@ -195,7 +213,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="280dp"
         android:gravity="top"
-        android:text="@string/what_asjnak"
+        android:text="Always respect social networking age requirements, they are there to:"
         android:textAppearance="@style/what_asjnak"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -219,12 +237,12 @@
 
     <TextView
         android:id="@+id/option1"
-        android:layout_width="132dp"
-        android:layout_height="35.43dp"
+        android:layout_width="151dp"
+        android:layout_height="34dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:fontFamily="@font/gilroym"
-        android:text="Option 1"
+        android:text="HURT YOU"
         android:textAlignment="center"
         android:textAppearance="@style/option1"
         android:textColor="@color/black"
@@ -232,14 +250,15 @@
         app:layout_constraintEnd_toEndOf="@+id/rectangsfhjkdle_1"
         app:layout_constraintStart_toStartOf="@+id/rectangsfhjkdle_1"
         app:layout_constraintTop_toTopOf="@+id/rectangsfhjkdle_1" />
+
     <TextView
         android:id="@+id/optidon3"
-        android:layout_width="132dp"
-        android:layout_height="35.43dp"
+        android:layout_width="230dp"
+        android:layout_height="38dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:fontFamily="@font/gilroym"
-        android:text="Option 1"
+        android:text="RESTRICT YOU"
         android:textAlignment="center"
         android:textAppearance="@style/option1"
         android:textColor="@color/black"
@@ -247,14 +266,15 @@
         app:layout_constraintEnd_toEndOf="@+id/rectangsfhjkdle_2"
         app:layout_constraintStart_toStartOf="@+id/rectangsfhjkdle_2"
         app:layout_constraintTop_toTopOf="@+id/rectangsfhjkdle_2" />
+
     <TextView
         android:id="@+id/optiion2"
-        android:layout_width="132dp"
-        android:layout_height="35.43dp"
+        android:layout_width="192dp"
+        android:layout_height="36dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:fontFamily="@font/gilroym"
-        android:text="Option 1"
+        android:text="PROTECT YOU"
         android:textAlignment="center"
         android:textAppearance="@style/option1"
         android:textColor="@color/black"
