@@ -39,4 +39,5 @@ dependencies {
     implementation "com.airbnb.android:lottie:$lottieVersion"
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.1.0'
 
+
 }

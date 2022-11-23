@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/drawable/ic_grid.xml" value="0.1" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/drawable/rect_vio.xml" value="0.187" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/about_us.xml" value="0.1796875" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_game_main.xml" value="0.1" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_gameover.xml" value="0.1796875" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_level_two_game.xml" value="0.6" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_questions.xml" value="0.1796875" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_quiz.xml" value="0.165625" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_result.xml" value="0.1796875" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_select_quiz.xml" value="0.1796875" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_start_game.xml" value="0.1796875" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/game_page.xml" value="0.22" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/home.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/learn_basic.xml" value="0.1796875" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/learnmore.xml" value="0.1" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/level1_waitingscreen.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/memory_game.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/memory_game_begin.xml" value="0.1" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/quiz_page.xml" value="0.1796875" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/quiz_play.xml" value="0.10643115942028986" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/quiz_play_basic_1.xml" value="0.10643115942028986" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/quiz_play_basic_1_next.xml" value="0.1" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/quiz_play_basic_3_next.xml" value="0.1" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/quiz_play_next.xml" value="0.1" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/menu/menu_navigation.xml" value="0.165625" />
+      </map>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

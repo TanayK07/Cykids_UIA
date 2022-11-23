@@ -165,4 +165,15 @@
         </item>
 
     </style>
+    <style name="drag_drop">
+
+        <item name="android:textSize">
+            53.4sp
+        </item>
+
+        <item name="android:textColor">
+            #718AF4
+        </item>
+
+    </style>
 </resources>
