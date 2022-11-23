@@ -12,14 +12,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
+        android:background="@drawable/my_btn"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:paddingBottom="5dp"
         android:text="Game Over!"
         android:textColor="#c4572f"
-        android:background="@drawable/my_btn"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/score"
@@ -43,96 +43,116 @@
         android:layout_marginEnd="5dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
-        android:src="@drawable/ic_baseline_close_24"
         android:background="@drawable/eclipse"
-        android:backgroundTint="#c93b30"/>
+        android:backgroundTint="#c93b30"
+        android:src="@drawable/ic_baseline_close_24" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_width="566dp"
+        android:layout_height="271dp"
         android:layout_below="@id/score"
         android:layout_centerHorizontal="true"
-        android:padding="12dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/my_btn">
+        android:background="@drawable/my_btn"
+        android:orientation="vertical"
+        android:padding="12dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <ImageView
                 android:id="@+id/info"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginBottom="12dp"
-                android:src="@drawable/ic_baseline_info_24"
-                android:background="@drawable/eclipse"/>
+                android:background="@drawable/eclipse"
+                android:src="@drawable/ic_baseline_info_24" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="Malware"
-                android:textStyle="bold"
+                android:fontFamily="@font/gilroyextrabold"
                 android:paddingStart="4dp"
                 android:paddingEnd="4dp"
-                />
+                android:text="HOW TO STAY SAFE FROM VIRUSES:"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="* Virus corrupt computer file and apps"
+            android:fontFamily="@font/gilroym"
             android:paddingStart="4dp"
             android:paddingEnd="4dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="* Keep latest antivirus installed"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="* Always keep firewalls on"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp"
-            />
+            android:text="->Do not install games from unknown sources."
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="* Trojan can give a hacker access to your computer"
             android:paddingStart="4dp"
             android:paddingEnd="4dp"
-            />
+            android:text=""
+            android:textSize="14sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="* External drives and internet are sources of viruses"
+            android:fontFamily="@font/gilroym"
             android:paddingStart="4dp"
-            android:paddingEnd="4dp"/>
+            android:paddingEnd="4dp"
+            android:text="-> Use public Wifi safely "
+            android:textSize="14sp" />
+
         <TextView
-            android:id="@+id/learnMore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:text=""
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroym"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:text="-> Update Antivirus from time to time"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:text=""
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/learnMore"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="2dp"
             android:background="@drawable/my_btn"
             android:backgroundTint="#75C8FF"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
-            android:text="Learn more..."
+            android:fontFamily="@font/gilroyb"
+
+            android:paddingLeft="40dp"
+            android:paddingTop="5dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="5dp"
+            android:text="Quiz Now!"
+            android:onClick="onClick"
+            android:clickable="true"
             android:textColor="#fff"
-            android:textSize="14sp" />
+            android:textSize="18sp" />
+
 
     </LinearLayout>
 

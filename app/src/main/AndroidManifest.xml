@@ -63,6 +63,20 @@
         <activity android:name=".Game_page" />
         <activity android:name=".Quiz_page" />
         <activity android:name=".About_us" />
+
+        <activity android:name=".Learner"></activity>
+        <activity android:name=".Learn_basic"></activity>
+        <activity android:name=".Quiz_play"></activity>
+        <activity android:name=".Quiz_play_1_display">
+
+        </activity>
+        <activity android:name=".Quiz_play_3_display"></activity>
+        <activity android:name=".Quiz_play_3"></activity>
+
+
+
+        <activity android:name=".Quiz_play_2"></activity>
+        <activity android:name=".Quiz_play_2_display"></activity>
         <activity
             android:name=".GameMain"
             android:screenOrientation="landscape"
