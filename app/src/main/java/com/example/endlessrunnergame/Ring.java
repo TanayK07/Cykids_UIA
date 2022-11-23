@@ -8,7 +8,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 
-import com.example.myapplication.R;
+
 
 import java.util.ArrayList;
 import java.util.Random;
