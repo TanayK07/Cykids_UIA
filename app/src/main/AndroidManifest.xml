@@ -14,57 +14,16 @@
         android:theme="@style/Theme.AppCompat.DayNight"
         tools:targetApi="31">
         <activity
-            android:name=".ResultActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".QuizActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".QuestionsActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".SelectQuizActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".levelTwoGame"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-            tools:ignore="ExtraText">
+            tools:ignore="ExtraText"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-<<<<<<< HEAD
-        </activity> <!-- on below line we are adding a style for MainActivity -->
-        <activity android:name=".SplashScreenActivity" />
-        <activity android:name=".Game_page" />
-        <activity android:name=".Quiz_page" />
-        <activity android:name=".About_us" />
-=======
 
         </activity>
         <!--on below line we are adding a style for MainActivity-->
@@ -86,15 +45,14 @@
 
         <activity android:name=".Quiz_play_2"></activity>
         <activity android:name=".Quiz_play_2_display"></activity>
->>>>>>> b1646ded298e4afb4c9b82ca943b1fbf29f081fa
         <activity
             android:name=".GameMain"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.noActionBar" />
-        <activity
-            android:name=".GameActivity"
+        
+        <activity android:name=".GameActivity"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.noActionBar" />
+            android:theme="@style/AppTheme.noActionBar"/>
     </application>
 
 </manifest>
