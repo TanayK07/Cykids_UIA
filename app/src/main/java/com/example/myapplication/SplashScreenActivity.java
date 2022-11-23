@@ -2,6 +2,10 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
@@ -19,6 +23,40 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+        SoundPool soundPool;
+        if (Build.VERSION.SDK_INT
+                >= Build.VERSION_CODES.LOLLIPOP) {
+            AudioAttributes
+                    audioAttributes
+                    = new AudioAttributes
+                    .Builder()
+                    .setUsage(
+                            AudioAttributes
+                                    .USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(
+                            AudioAttributes
+                                    .CONTENT_TYPE_SONIFICATION)
+                    .build();
+            soundPool
+                    = new SoundPool
+                    .Builder()
+                    .setMaxStreams(3)
+                    .setAudioAttributes(
+                            audioAttributes)
+                    .build();
+
+        }
+        else {
+            soundPool
+                    = new SoundPool(
+                    3,
+                    AudioManager.STREAM_MUSIC,
+                    0);
+        }
+        int button_music = soundPool.load(
+                this,
+                R.raw.button_click,
+                1);
 
        /* prefs = getSharedPreferences("game", MODE_PRIVATE);
         long timeStarted = prefs.getLong("timeStarted", 0);
@@ -59,10 +97,19 @@ public class SplashScreenActivity extends AppCompatActivity {
         View btn_about=(View)findViewById(R.id.rectanglaboutus);
         View btn_learn=(View)findViewById(R.id.rectangle_7);
 
-        btn_play.setOnClickListener(v -> startActivity(new Intent(SplashScreenActivity.this,Game_page.class)));
-        btn_quiz.setOnClickListener(v -> startActivity(new Intent(SplashScreenActivity.this,Quiz_page.class)));
-        btn_about.setOnClickListener(v -> startActivity(new Intent(SplashScreenActivity.this,About_us.class)));
-        btn_learn.setOnClickListener(v -> startActivity(new Intent(SplashScreenActivity.this, Learner.class)));
+        btn_play.setOnClickListener(v ->
+        {startActivity(new Intent(SplashScreenActivity.this,Game_page.class));
+            soundPool.play(button_music, 1, 1, 0, 0, 1);
+            });
+        btn_quiz.setOnClickListener(v -> {startActivity(new Intent(SplashScreenActivity.this,Quiz_page.class));
+            soundPool.play(button_music, 1, 1, 0, 0, 1);
+            });
+        btn_about.setOnClickListener(v -> {startActivity(new Intent(SplashScreenActivity.this,About_us.class));
+            soundPool.play(button_music, 1, 1, 0, 0, 1);
+            });
+        btn_learn.setOnClickListener(v -> {startActivity(new Intent(SplashScreenActivity.this, Learner.class));
+            soundPool.play(button_music, 1, 1, 0, 0, 1);
+            });
 
     }
 
