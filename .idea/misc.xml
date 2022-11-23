@@ -3,23 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new/app/src/main/res/drawable/correct_optn.xml" value="0.1355" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new/app/src/main/res/drawable/greycircle.xml" value="0.188" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new/app/src/main/res/drawable/quiz_box.xml" value="0.1825" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new/app/src/main/res/drawable/rect_cover.xml" value="0.1615" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new/app/src/main/res/drawable/timerlogo.xml" value="0.188" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new/app/src/main/res/drawable/wrong_option.xml" value="0.1355" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new/app/src/main/res/layout/about_us.xml" value="0.1796875" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new/app/src/main/res/layout/activity_main.xml" value="0.13043478260869565" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new/app/src/main/res/layout/game_page.xml" value="0.13043478260869565" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new/app/src/main/res/layout/home.xml" value="0.22" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new/app/src/main/res/layout/quiz_page.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new/app/src/main/res/layout/quiz_play.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new1/app/src/main/res/layout/about_us.xml" value="0.12635869565217392" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new1/app/src/main/res/layout/activity_game_main.xml" value="0.12635869565217392" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new1/app/src/main/res/layout/activity_gameover.xml" value="0.12635869565217392" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new1/app/src/main/res/layout/activity_main.xml" value="0.12635869565217392" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new1/app/src/main/res/layout/game_page.xml" value="0.22" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new1/app/src/main/res/layout/home.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new1/app/src/main/res/layout/learnmore.xml" value="0.22" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new1/app/src/main/res/layout/quiz_page.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_new1/app/src/main/res/layout/quiz_play.xml" value="0.1796875" />
       </map>
     </option>
   </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
