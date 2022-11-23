@@ -16,8 +16,78 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
+
 public class Quiz_play extends AppCompatActivity {
-    TextView tvTimer;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.quiz_play_basic_1);
+
+        View btn_option1=(View)findViewById(R.id.rectangsfhjkdle_1);
+        View btn_option2=(View)findViewById(R.id.rectangsfhjkdle_);
+        View btn_option3=(View)findViewById(R.id.rectangsfhjkdle_2);
+
+        int key=-1;
+        //if btn_option1 is clicked call func_correctquiz1()
+        btn_option1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_play.this,Quiz_play_1_display.class));
+            }
+        });
+        btn_option2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_play.this,Quiz_play_1_display.class));
+            }
+        });
+        btn_option3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_play.this,Quiz_play_1_display.class));
+            }
+        });
+
+    }
+
+    public void func_correctquiz1() {
+
+
+        View btn_option1 = (View) findViewById(R.id.rectangsfhjkdle_1);
+        btn_option1.setBackground(getResources().getDrawable(R.drawable.correct_optn));
+        View btn_option2 = (View) findViewById(R.id.rectangsfhjkdle_);
+        btn_option1.setBackground(getResources().getDrawable(R.drawable.wrong_option));
+        View btn_option3 = (View) findViewById(R.id.rectangsfhjkdle_2);
+        btn_option1.setBackground(getResources().getDrawable(R.drawable.wrong_option));
+
+    }
+    public void correctquiz2(){
+
+
+        View btn_option1=(View)findViewById(R.id.rectangsfhjkdle_1);
+        btn_option1.setBackground(getResources().getDrawable(R.drawable.wrong_option));
+        View btn_option2=(View)findViewById(R.id.rectangsfhjkdle_);
+        btn_option1.setBackground(getResources().getDrawable(R.drawable.correct_optn));
+        View btn_option3=(View)findViewById(R.id.rectangsfhjkdle_2);
+        btn_option1.setBackground(getResources().getDrawable(R.drawable.wrong_option));
+
+
+    }
+    public void correctquiz3(){
+
+        View btn_option1=(View)findViewById(R.id.rectangsfhjkdle_1);
+        btn_option1.setBackground(getResources().getDrawable(R.drawable.wrong_option));
+        View btn_option2=(View)findViewById(R.id.rectangsfhjkdle_);
+        btn_option1.setBackground(getResources().getDrawable(R.drawable.wrong_option));
+        View btn_option3=(View)findViewById(R.id.rectangsfhjkdle_2);
+        btn_option1.setBackground(getResources().getDrawable(R.drawable.correct_optn));
+
+
+    }
+
+}
+   /* TextView tvTimer;
     // A TextView for showing Result
     TextView tvResult;
     // An ImageView for showing an image in question
@@ -59,7 +129,7 @@ public class Quiz_play extends AppCompatActivity {
         TextView option1=(TextView)findViewById(R.id.option1);
         TextView option2=(TextView)findViewById(R.id.optiion2);
         TextView option3=(TextView)findViewById(R.id.optidon3);
-        
+
 
 
 
@@ -297,5 +367,5 @@ btn_option1.setOnClickListener(new View.OnClickListener() {
     }
 
 
-
+/*/
 

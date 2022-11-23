@@ -12,7 +12,7 @@ public class Quiz_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_page);
-        View btn_quizplay=(View)findViewById(R.id.rectangle_8 );
+        View btn_quizplay=(View)findViewById(R.id.rectangle_9 );
 
 
 
