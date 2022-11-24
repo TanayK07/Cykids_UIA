@@ -10,7 +10,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -45,12 +49,58 @@ public class levelTwoGame extends AppCompatActivity {
     private boolean timerRunning;
     int currentScore,highScore = 0;
     String userEmail="";
+    int button_right,button_wrong;
+    SoundPool rightsoundPool,wrongsoundPool;
     int items = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_two_game);
+        if (Build.VERSION.SDK_INT
+                >= Build.VERSION_CODES.LOLLIPOP) {
+            AudioAttributes
+                    audioAttributes
+                    = new AudioAttributes
+                    .Builder()
+                    .setUsage(
+                            AudioAttributes
+                                    .USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(
+                            AudioAttributes
+                                    .CONTENT_TYPE_SONIFICATION)
+                    .build();
+            rightsoundPool
+                    = new SoundPool
+                    .Builder()
+                    .setMaxStreams(3)
+                    .setAudioAttributes(
+                            audioAttributes)
+                    .build();
+            wrongsoundPool
+                    = new SoundPool
+                    .Builder()
+                    .setMaxStreams(3)
+                    .setAudioAttributes(
+                            audioAttributes)
+                    .build();
+        }
+        else {
+            rightsoundPool
+                    = new SoundPool(
+                    3,
+                    AudioManager.STREAM_MUSIC,
+                    0);
+            wrongsoundPool
+                    = new SoundPool(
+                    3,
+                    AudioManager.STREAM_MUSIC,
+                    0);
+        }
+        button_right = rightsoundPool.load(this, R.raw.right, 1);
+        button_wrong = wrongsoundPool.load(this,R.raw.wrong,1);
+
+
         getSupportActionBar().setTitle("Game");
         SharedPreferences sp = getApplicationContext().getSharedPreferences("USER_DATA", Context.MODE_PRIVATE);
         userEmail = sp.getString("email",null);
@@ -297,6 +347,7 @@ public class levelTwoGame extends AppCompatActivity {
                         System.out.println("GLASS BIN");
                         if (currentGarbageItem.garbageType == GarbageType.GLASS) {
                             increaseScore();
+                            rightsoundPool.play(button_right,1,1,0,0,1);
                             showCorrectToast();
                             correctImage1.setVisibility(View.VISIBLE);
                             new Handler().postDelayed(new Runnable(){
@@ -306,6 +357,7 @@ public class levelTwoGame extends AppCompatActivity {
                             }, 600);
                         }
                         else {
+                            wrongsoundPool.play(button_wrong,1,1,0,0,1);
                             displayInstallDialog();
                         }
                         updateCurrentScore();
@@ -316,6 +368,7 @@ public class levelTwoGame extends AppCompatActivity {
                         System.out.println("PLASTIC BIN");
                         if (currentGarbageItem.garbageType == GarbageType.PLASTICS) {
                             increaseScore();
+                            rightsoundPool.play(button_right,1,1,0,0,1);
                             showCorrectToast();
                             correctImage2.setVisibility(View.VISIBLE);
                             new Handler().postDelayed(new Runnable(){
@@ -326,6 +379,7 @@ public class levelTwoGame extends AppCompatActivity {
                         }
 
                         else {
+                            wrongsoundPool.play(button_wrong,1,1,0,0,1);
                             displayBackupDialog();
                         }
                         updateCurrentScore();
@@ -336,6 +390,7 @@ public class levelTwoGame extends AppCompatActivity {
                         System.out.println("PAPER BIN");
                         if (currentGarbageItem.garbageType == GarbageType.PAPER) {
                             increaseScore();
+                            rightsoundPool.play(button_right,1,1,0,0,1);
                             showCorrectToast();
                             correctImage3.setVisibility(View.VISIBLE);
                             new Handler().postDelayed(new Runnable(){
@@ -345,6 +400,7 @@ public class levelTwoGame extends AppCompatActivity {
                             }, 600);
                         }
                         else {
+                            wrongsoundPool.play(button_wrong,1,1,0,0,1);
                             displayEncryptDialog();
                         }
                         updateCurrentScore();
@@ -355,6 +411,7 @@ public class levelTwoGame extends AppCompatActivity {
                         System.out.println("ORGANIC BIN");
                         if (currentGarbageItem.garbageType == GarbageType.ORGANIC) {
                             increaseScore();
+                            rightsoundPool.play(button_right,1,1,0,0,1);
                             showCorrectToast();
                             correctImage4.setVisibility(View.VISIBLE);
                             new Handler().postDelayed(new Runnable(){
@@ -364,6 +421,7 @@ public class levelTwoGame extends AppCompatActivity {
                             }, 600);
                         }
                         else {
+                            wrongsoundPool.play(button_wrong,1,1,0,0,1);
                             displayClearDialog();
                         }
                         updateCurrentScore();
