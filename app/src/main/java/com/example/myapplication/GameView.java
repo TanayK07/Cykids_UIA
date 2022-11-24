@@ -3,10 +3,14 @@ package com.example.myapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -30,13 +34,13 @@ public class GameView extends SurfaceView implements Runnable {
     public static int score=0;
     public static float screenRatioX, screenRatioY;
     private Paint paint;
-    private Paint rectPaint;
+    private Paint rectPaint, toastPaint;
     private Malware[] malwares;
     private SharedPreferences prefs;
     private Random random;
     private SoundPool soundPool;
     private List<Bullet> bullets;
-    private int sound;
+    private int sound, countTimer;
     private Flight flight;
     private GameActivity activity;
     private Background background1, background2;
@@ -47,6 +51,7 @@ public class GameView extends SurfaceView implements Runnable {
     private boolean isUpdated, showAntivirus, posSet, monitorAntivirus;
     private Antivirus antivirus;
     private int antivirusPosX, antivirusPosY, rounds;
+    private boolean running, rerunTrigger, warning, newUpdate, displayToast;
 
     public GameView(GameActivity activity, int screenX, int screenY) {
         super(activity);
@@ -54,7 +59,6 @@ public class GameView extends SurfaceView implements Runnable {
         this.activity = activity;
         speedRation = GameActivity.point.x / 40;
         prefs = activity.getSharedPreferences("game", Context.MODE_PRIVATE);
-
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
@@ -94,6 +98,10 @@ public class GameView extends SurfaceView implements Runnable {
         rectPaint.setStyle(Paint.Style.FILL);
         rectPaint.setColor(Color.parseColor("#ffffff"));
 
+        toastPaint = new Paint();
+        toastPaint.setStyle(Paint.Style.FILL);
+        toastPaint.setColor(Color.parseColor("#1fad62"));
+
         malwares = new Malware[3];
 
         Worm worm = new Worm(getResources());
@@ -111,12 +119,15 @@ public class GameView extends SurfaceView implements Runnable {
         if(!prefs.getBoolean("soundMuted", false)){
             mediaPlayer.start();
         }
-        monitorAntivirus = true;
+        running=true;
+        isUpdated = true;
+        countTimer = 0;
     }
 
     @Override
     public void run() {
-        monitorAntTask();
+        antivirusTrigger();
+        monitorUpdates();
         while (isPlaying) {
             if(!mediaPlayer.isPlaying() && (!prefs.getBoolean("soundMuted", false))){
                 mediaPlayer.start();
@@ -171,11 +182,11 @@ public class GameView extends SurfaceView implements Runnable {
 
             if (malware.x + malware.width < 0) {
                 add = true;
-                int bound = (int) (speedRation * 0.5);
+                int bound = (int) (speedRation * 0.3);
                 malware.speed = random.nextInt(bound);
 
-                if (malware.speed < speedRation/4)
-                    malware.speed = (int) speedRation/4;
+                if (malware.speed < speedRation/5)
+                    malware.speed = (int) speedRation/5;
                 malware.x = screenX;
                 malware.y = random.nextInt(screenY - (int)(malware.height * 1.25));
                 malware.wasShot = false;
@@ -209,7 +220,15 @@ public class GameView extends SurfaceView implements Runnable {
                 rectPaint.setColor(Color.parseColor("#f05a4d"));
             }
             else{
-                rectPaint.setColor(Color.parseColor("#ffffff"));
+                rectPaint.setColor(Color.parseColor("#40c943"));
+            }
+            if(warning){
+                rectPaint.setColor(Color.parseColor("#f05a4d"));
+
+            }
+            else{
+
+                rectPaint.setColor(Color.parseColor("#40c943"));
             }
             canvas.drawRect(new Rect(0, 0, GameActivity.point.x/6, GameActivity.point.y), rectPaint);
 
@@ -221,7 +240,7 @@ public class GameView extends SurfaceView implements Runnable {
             canvas.drawBitmap(files.file3, GameActivity.point.x/6/2-(File.iconSize/2), GameActivity.point.y*5/8-(File.iconSize/2), paint);
 
             if(showAntivirus){
-                canvas.drawBitmap(antivirus.antivirus, 1080, 400, paint);
+                canvas.drawBitmap(antivirus.antivirus, antivirus.x, antivirus.y, paint);
             }
 
             if (isGameOver) {
@@ -238,10 +257,15 @@ public class GameView extends SurfaceView implements Runnable {
             for (Bullet bullet : bullets)
                 canvas.drawBitmap(bullet.bullet, bullet.x, bullet.y, paint);
 
+            if(displayToast){
+                Bitmap toast = BitmapFactory.decodeResource(getResources(), R.drawable.antivirus_updated);
+                int width = toast.getWidth();
+                int height = toast.getHeight();
+                toast = Bitmap.createScaledBitmap(toast, width, height, false);
+                canvas.drawBitmap(toast, (activity.point.x/2)-(width/2), activity.point.y - height - 25, paint);
+            }
             getHolder().unlockCanvasAndPost(canvas);
-
         }
-
     }
 
     private void waitBeforeExiting() {
@@ -303,11 +327,13 @@ public class GameView extends SurfaceView implements Runnable {
                 if (event.getX() < screenX / 2) {
                     flight.isGoingUp = true;
                 }
-
-                if(event.getX() >= antivirus.x && event.getX() <= antivirus.x + 200  && event.getY() >= antivirus.y && event.getY() <= antivirus.y + 200){
-                    isUpdated = true;
+                if(isClicked(event.getX(), event.getY(),
+                        antivirus.x, antivirus.y, antivirus.length, antivirus.width)){
                     showAntivirus = false;
-                }
+                    rerunTrigger = true;
+                    showToast("update");
+
+                };
                 break;
             case MotionEvent.ACTION_UP:
                 flight.isGoingUp = false;
@@ -317,6 +343,25 @@ public class GameView extends SurfaceView implements Runnable {
         }
 
         return true;
+    }
+    public void showToast(String message){
+        new Thread(() -> {
+            if(message == "update"){
+                displayToast = true;
+                isUpdated = true;
+                newUpdate = true;
+                countTimer = 0;
+            }
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            displayToast = false;
+            rerunTrigger = false;
+
+
+        }).start();
     }
 
     public void newBullet() {
@@ -345,25 +390,77 @@ public class GameView extends SurfaceView implements Runnable {
                 if(infected && !isUpdated){
                     isGameOver=true;
                 }
+
+            }
+        }).start();
+    }
+
+    public void antivirusTrigger(){
+        new Thread(() -> {
+
+            while(running){
+                if(!rerunTrigger){
+                    try {
+                        TimeUnit.SECONDS.sleep(15);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    if(showAntivirus){
+                        showAntivirus = false;
+                    }
+                    else{
+                        showAntivirus = true;
+                    }
+                }
+            }
+        }).start();
+    }
+    public void monitorUpdates(){
+        new Thread(() -> {
+            while(running){
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                    countTimer++;
+                    if(countTimer == 6){
+                        sendWarning();
+                    }
+                    if(countTimer >= 10 || countTimer == 0){
+                        if(isUpdated==false){
+
+                            countTimer = 0;
+                            isGameOver = true;
+                        }
+                        isUpdated = false;
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
 
         }).start();
     }
-    public void monitorAntTask(){
-        new Thread(() -> {
+    public void sendWarning(){
+        while(countTimer < 10 && countTimer > 5){
             try {
-                TimeUnit.SECONDS.sleep(10);
+                warning = true;
+                TimeUnit.SECONDS.sleep(1);
+                warning = false;
+                TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+        }
+        if(!isUpdated){
+            isGameOver= true;
+        }
+    }
 
-            if(showAntivirus){
-                showAntivirus = false;
-            }
-            else{
-                showAntivirus = true;
-            }
+    public boolean isClicked(float x, float y, int posX, int posY, int length, int width){
 
-        }).start();
+        if(x>=posX && x<=(posX+length) && y>=posY && y<= (posY+width)){
+            return true;
+        }
+        return false;
     }
 }
