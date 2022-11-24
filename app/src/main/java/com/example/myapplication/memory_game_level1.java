@@ -9,6 +9,10 @@ import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.Interpolator;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -27,10 +31,44 @@ public class memory_game_level1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.memory_game);
         View back_btn=findViewById(R.id.back_button);
+        Intent svc=new Intent(this, bgmservice3.class);
+        startService(svc);
+        SoundPool backsoundPool;
+        if (Build.VERSION.SDK_INT
+                >= Build.VERSION_CODES.LOLLIPOP) {
+            AudioAttributes
+                    audioAttributes
+                    = new AudioAttributes
+                    .Builder()
+                    .setUsage(
+                            AudioAttributes
+                                    .USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(
+                            AudioAttributes
+                                    .CONTENT_TYPE_SONIFICATION)
+                    .build();
+            backsoundPool
+                    = new SoundPool
+                    .Builder()
+                    .setMaxStreams(3)
+                    .setAudioAttributes(
+                            audioAttributes)
+                    .build();
+        }
+        else {
+            backsoundPool
+                    = new SoundPool(
+                    3,
+                    AudioManager.STREAM_MUSIC,
+                    0);
+        }
+        int back_button_music = backsoundPool.load(memory_game_level1.this,R.raw.back_button_click,1);
+        back_btn= (View) findViewById(R.id.back_button);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(memory_game_level1.this,MainActivity.class);
+                backsoundPool.play(back_button_music,1,1,0,0,1);
                 startActivity(i);
                 finish();
             }
@@ -165,6 +203,7 @@ animatorSet.start();*/
                     }
 
                     public void onFinish() {
+                        stopService(svc);
                         timer.setText(""+0);
                         anim_tiles.setDuration(500).reverse();
                         uppertextopacity.reverse();

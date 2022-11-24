@@ -20,6 +20,8 @@ public class Learner extends AppCompatActivity {
         View btn_back = (View)findViewById(R.id.ellipse_1);
         SoundPool soundPool;
         SoundPool backsoundPool;
+        Intent svc=new Intent(this, BackgroundSoundService.class);
+        startService(svc);
         if (Build.VERSION.SDK_INT
                 >= Build.VERSION_CODES.LOLLIPOP) {
             AudioAttributes
@@ -65,11 +67,12 @@ public class Learner extends AppCompatActivity {
                 R.raw.button_click,
                 1);
         int back_button_music = backsoundPool.load(this,R.raw.back_button_click,1);
-        btn_learn.setOnClickListener(v -> {startActivity(new Intent(Learner.this,Learn_basic.class));
+        btn_learn.setOnClickListener(v -> {stopService(svc);startActivity(new Intent(Learner.this,Learn_basic.class));
             soundPool.play(button_music,1,1,0,0,1);});
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopService(svc);
                 startActivity(new Intent(Learner.this,SplashScreenActivity.class));
                 backsoundPool.play(back_button_music,1,1,0,0,1);
             }

@@ -52,11 +52,13 @@ public class levelTwoGame extends AppCompatActivity {
     int button_right,button_wrong;
     SoundPool rightsoundPool,wrongsoundPool;
     int items = 0;
-
+    Intent svc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_two_game);
+        svc=new Intent(this, bgmservice1.class);
+        startService(svc);
         if (Build.VERSION.SDK_INT
                 >= Build.VERSION_CODES.LOLLIPOP) {
             AudioAttributes
@@ -179,6 +181,7 @@ public class levelTwoGame extends AppCompatActivity {
             @Override
             public void onFinish() {
                 timeLeftInMilliSeconds = 0;
+                stopService(svc);
                 updateTimer();
                 callAlertBox();
             }
@@ -253,6 +256,7 @@ public class levelTwoGame extends AppCompatActivity {
         alerted.setView(view);
         alerted.setNeutralButton("Quiz Now! Earn Points", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dlg, int something) {
+                stopService(svc);
                 levelTwoGame.this.finish();
                 Intent intent = new Intent(levelTwoGame.this, Quiz_page.class);
                 startActivity(intent);

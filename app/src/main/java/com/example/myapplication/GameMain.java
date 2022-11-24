@@ -31,7 +31,8 @@ public class GameMain extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        Intent svc=new Intent(this, BackgroundSoundService.class);
+        startService(svc);
         setContentView(R.layout.activity_game_main);
         SoundPool soundPool,backsoundPool;
         if (Build.VERSION.SDK_INT
@@ -83,6 +84,7 @@ public class GameMain extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopService(svc);
                 startActivity(new Intent(GameMain.this,Game_page.class));
                 backsoundPool.play(back_button_music, 1, 1, 0, 0, 1);
             }
@@ -90,6 +92,7 @@ public class GameMain extends AppCompatActivity {
         findViewById(R.id.play).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                stopService(svc);
                 startActivity(new Intent(GameMain.this, GameActivity.class));
                 soundPool.play(button_music, 1, 1, 0, 0, 1);
                 finish();
