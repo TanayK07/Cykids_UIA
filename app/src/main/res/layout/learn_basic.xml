@@ -76,30 +76,30 @@
 
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/youTubePlayerView"
-        android:layout_width="316dp"
-        android:layout_height="189dp"
+        android:layout_width="339dp"
+        android:layout_height="219dp"
         android:layout_marginTop="120dp"
+        app:autoPlay="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:videoId="8tR9P4QX82I"
-        app:autoPlay="true"/>
+        />
 
     <TextView
         android:id="@+id/what_asjnak"
-        android:layout_width="285dp"
-        android:layout_height="136dp"
+        android:layout_width="325dp"
+        android:layout_height="309dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="20dp"
         android:gravity="top"
         android:text="@string/what_asjnak"
         android:textAppearance="@style/what_asjnak"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/youTubePlayerView" />
 

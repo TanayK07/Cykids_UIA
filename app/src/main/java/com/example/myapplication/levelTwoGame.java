@@ -262,7 +262,7 @@ public class levelTwoGame extends AppCompatActivity {
         });
 
         alerted.show();}
-       // alert.show();
+    // alert.show();
 
 
     private void stopTimer() {
@@ -329,8 +329,15 @@ public class levelTwoGame extends AppCompatActivity {
     }
 
     public void showCorrectToast() {
-        Toast.makeText(getApplicationContext(),"Awesome!",
-                Toast.LENGTH_SHORT).show();
+        Toast toast = new Toast(getApplicationContext());
+        ImageView view = new ImageView(getApplicationContext());
+        view.setImageResource(R.drawable.correct);
+
+        // setting view to toast
+        toast.setView(view);
+
+        // showing toast
+        toast.show();
     }
 
     private final class MyTouchListener implements View.OnTouchListener {
@@ -466,7 +473,18 @@ public class levelTwoGame extends AppCompatActivity {
     }
 
     public void displayInstallDialog () {
-        AlertDialog.Builder alerted = new AlertDialog.Builder(levelTwoGame.this);
+        Toast toast = new Toast(getApplicationContext());
+        ImageView view = new ImageView(getApplicationContext());
+        view.setImageResource(R.drawable.wrong);
+
+        // setting view to toast
+        toast.setView(view);
+
+        // showing toast
+        toast.show();
+
+
+      /*  AlertDialog.Builder alerted = new AlertDialog.Builder(levelTwoGame.this);
         LayoutInflater factory = LayoutInflater.from(levelTwoGame.this);
         final View view = factory.inflate(R.layout.sample, null);
         alerted.setView(view);
@@ -476,48 +494,79 @@ public class levelTwoGame extends AppCompatActivity {
             }
         });
 
-        alerted.show();}
+        alerted.show();*/}
 
     public void displayBackupDialog () {
-        AlertDialog.Builder alerted = new AlertDialog.Builder(levelTwoGame.this);
+        Toast toast = new Toast(getApplicationContext());
+        ImageView view = new ImageView(getApplicationContext());
+        view.setImageResource(R.drawable.wrong);
+
+        // setting view to toast
+        toast.setView(view);
+
+        // showing toast
+        toast.show();
+
+
+      /*  AlertDialog.Builder alerted = new AlertDialog.Builder(levelTwoGame.this);
         LayoutInflater factory = LayoutInflater.from(levelTwoGame.this);
         final View view = factory.inflate(R.layout.sample, null);
         alerted.setView(view);
-        alerted.setNeutralButton("Click Here", new DialogInterface.OnClickListener() {
+        alerted.setNeutralButton("", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dlg, int something) {
 
             }
-        }
+        });
 
-        );
-
-        alerted.show();}
+        alerted.show();*/}
 
     public void displayEncryptDialog () {
-        AlertDialog.Builder alerted = new AlertDialog.Builder(levelTwoGame.this);
+        Toast toast = new Toast(getApplicationContext());
+        ImageView view = new ImageView(getApplicationContext());
+        view.setImageResource(R.drawable.wrong);
+
+        // setting view to toast
+        toast.setView(view);
+
+        // showing toast
+        toast.show();
+
+
+      /*  AlertDialog.Builder alerted = new AlertDialog.Builder(levelTwoGame.this);
         LayoutInflater factory = LayoutInflater.from(levelTwoGame.this);
         final View view = factory.inflate(R.layout.sample, null);
         alerted.setView(view);
-        alerted.setNeutralButton("Click Here", new DialogInterface.OnClickListener() {
+        alerted.setNeutralButton("", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dlg, int something) {
 
             }
         });
 
-        alerted.show();}
+        alerted.show();*/}
 
     public void displayClearDialog () {
-        AlertDialog.Builder alerted = new AlertDialog.Builder(levelTwoGame.this);
+        Toast toast = new Toast(getApplicationContext());
+        ImageView view = new ImageView(getApplicationContext());
+        view.setImageResource(R.drawable.wrong);
+
+        // setting view to toast
+        toast.setView(view);
+
+        // showing toast
+        toast.show();
+
+
+      /*  AlertDialog.Builder alerted = new AlertDialog.Builder(levelTwoGame.this);
         LayoutInflater factory = LayoutInflater.from(levelTwoGame.this);
         final View view = factory.inflate(R.layout.sample, null);
         alerted.setView(view);
-        alerted.setNeutralButton("Click Here", new DialogInterface.OnClickListener() {
+        alerted.setNeutralButton("", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dlg, int something) {
 
             }
         });
 
-        alerted.show();}
+        alerted.show();*/}
 
     @Override
     public void onBackPressed() {

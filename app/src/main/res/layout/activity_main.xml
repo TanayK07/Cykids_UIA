@@ -31,7 +31,7 @@
         android:layout_marginBottom="4dp"
         android:fontFamily="@font/gilroyextrabold"
         android:gravity="top"
-        android:text="Cykids"
+        android:text="CyVille"
         android:textAppearance="@style/tagline"
         android:textColor="#467BDC"
         android:textSize="75dp"
@@ -41,17 +41,20 @@
 
     <TextView
         android:id="@+id/tagline"
-        android:layout_width="134dp"
-        android:layout_height="41dp"
+        android:layout_width="322dp"
+        android:layout_height="39dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:fontFamily="@font/gilroym"
         android:gravity="top"
-        android:text="Tagline"
+        android:text="Your Cyber Home"
         android:textAppearance="@style/tagline"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/Cykids"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.728" />
+        app:layout_constraintVertical_bias="0.729" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

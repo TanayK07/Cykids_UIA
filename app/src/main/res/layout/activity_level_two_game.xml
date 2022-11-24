@@ -62,13 +62,13 @@
         android:fontFamily="@font/gilroyb"
         android:text="Items to protect: "
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="21sp"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_1"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.218"
         app:layout_constraintStart_toStartOf="@+id/rectangle_1"
         app:layout_constraintTop_toTopOf="@+id/rectangle_1"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintVertical_bias="0.461" />
 
     <ImageView
         android:id="@+id/timer3"
@@ -281,19 +281,19 @@
         android:layout_marginBottom="36dp"
         android:fontFamily="@font/gilroym"
         android:textColor="@color/black"
-        android:text="Score : 0"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/garbageImage"
-        android:layout_width="102dp"
-        android:layout_height="93dp"
+        android:layout_width="112dp"
+        android:layout_height="106dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_2"
         app:srcCompat="@drawable/apple" />
@@ -320,7 +320,6 @@
         android:layout_marginStart="28dp"
         android:layout_marginBottom="4dp"
         android:fontFamily="@font/gilroym"
-        android:text="Text based on learnmore"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25sp"
