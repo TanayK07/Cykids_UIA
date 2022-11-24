@@ -19,6 +19,8 @@ public class Level_1_waiting extends AppCompatActivity {
         setContentView(R.layout.level1_waitingscreen);
         SoundPool soundPool;
         SoundPool backsoundPool;
+        Intent svc=new Intent(this, BackgroundSoundService.class);
+        startService(svc);
         if (Build.VERSION.SDK_INT
                 >= Build.VERSION_CODES.LOLLIPOP) {
             AudioAttributes
@@ -67,6 +69,7 @@ public class Level_1_waiting extends AppCompatActivity {
         findViewById(R.id.relativeLayout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                stopService(svc);
                 startActivity(new Intent(Level_1_waiting.this, levelTwoGame.class));
                 soundPool.play(button_music, 1, 1, 0, 0, 1);
                 finish();
@@ -75,6 +78,7 @@ public class Level_1_waiting extends AppCompatActivity {
         findViewById(R.id.ellipse_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopService(svc);
                 startActivity(new Intent(Level_1_waiting.this, Game_page.class));
                 backsoundPool.play(back_button_music,1,1,0,0,1);
             }

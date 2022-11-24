@@ -18,6 +18,8 @@ public class Game_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_page);
         SoundPool soundPool,backsoundPool;
+        Intent svc=new Intent(this, BackgroundSoundService.class);
+        startService(svc);
         if (Build.VERSION.SDK_INT
                 >= Build.VERSION_CODES.LOLLIPOP) {
             AudioAttributes
@@ -66,6 +68,7 @@ public class Game_page extends AppCompatActivity {
         findViewById(R.id.rectangle_).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                stopService(svc);
                 startActivity(new Intent(Game_page.this, GameMain.class));
                 soundPool.play(button_music, 1, 1, 0, 0, 1);
                 finish();
@@ -75,6 +78,7 @@ public class Game_page extends AppCompatActivity {
         findViewById(R.id.rectangle_8).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopService(svc);
                 startActivity(new Intent(Game_page.this, Level_1_waiting.class));
                 soundPool.play(button_music, 1, 1, 0, 0, 1);
                 finish();
@@ -83,6 +87,7 @@ public class Game_page extends AppCompatActivity {
         findViewById(R.id.rectangle_12).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopService(svc);
                 startActivity(new Intent(Game_page.this, memory_game_level1.class));
                 soundPool.play(button_music, 1, 1, 0, 0, 1);
                 finish();
@@ -91,6 +96,7 @@ public class Game_page extends AppCompatActivity {
         findViewById(R.id.ellipse_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopService(svc);
                 startActivity(new Intent(Game_page.this,SplashScreenActivity.class));
                 backsoundPool.play(back_button_music,1,1,0,0,1);
             }

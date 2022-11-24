@@ -18,7 +18,7 @@ public class BackgroundSoundService extends Service {
             super.onCreate();
 
 
-            player = MediaPlayer.create(this, R.raw.bgm);
+            player = MediaPlayer.create(this, R.raw.bgm2);
             player.setLooping(true); // Set looping
             player.setVolume(100,100);
 
