@@ -73,7 +73,7 @@ public class levelTwoGame extends AppCompatActivity {
             }
         });
         currentGarbageImage = findViewById(R.id.garbageImage);
-        glassBin = findViewById(R.id.glassBin);
+        glassBin = findViewById(R.id.glassbin);
         plasticBin = findViewById(R.id.plasticBin);
         paperBin = findViewById(R.id.paperBin);
         organicBin = findViewById(R.id.organicBin);

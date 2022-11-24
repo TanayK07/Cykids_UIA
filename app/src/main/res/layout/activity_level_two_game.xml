@@ -93,7 +93,7 @@
         android:text="Install"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/glassBin"
+        app:layout_constraintEnd_toEndOf="@+id/glassbin"
         app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="@+id/glassbin"
         app:layout_constraintTop_toBottomOf="@+id/glassbin" />
@@ -140,9 +140,12 @@
         android:id="@+id/wrongImage2"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        android:layout_marginBottom="5dp"
         android:scaleType="centerInside"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="330dp" />
+        app:layout_constraintBottom_toTopOf="@+id/plasticBin"
+        app:layout_constraintEnd_toEndOf="@+id/plasticBin"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintStart_toStartOf="@+id/plasticBin" />
 
     <ImageView
         android:id="@+id/correctImage3"
@@ -172,30 +175,32 @@
         android:id="@+id/wrongImage4"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        android:layout_marginBottom="5dp"
         android:scaleType="centerInside"
-        tools:layout_editor_absoluteX="283dp"
-        tools:layout_editor_absoluteY="330dp" />
+        app:layout_constraintBottom_toTopOf="@+id/organicBin"
+        app:layout_constraintEnd_toEndOf="@+id/organicBin"
+        app:layout_constraintStart_toStartOf="@+id/organicBin" />
 
     <ImageView
         android:id="@+id/wrongImage1"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="92dp"
+        android:layout_marginBottom="5dp"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/glassBin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.861" />
+        app:layout_constraintBottom_toTopOf="@+id/glassbin"
+        app:layout_constraintEnd_toEndOf="@+id/glassbin"
+        app:layout_constraintStart_toStartOf="@+id/glassbin" />
 
     <ImageView
         android:id="@+id/correctImage1"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="5dp"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/glassBin"
-        app:srcCompat="@drawable/correct"
-        tools:layout_editor_absoluteX="92dp" />
+        app:layout_constraintBottom_toTopOf="@+id/glassbin"
+        app:layout_constraintEnd_toEndOf="@+id/glassbin"
+        app:layout_constraintStart_toStartOf="@+id/glassbin"
+        app:srcCompat="@drawable/correct" />
 
     <ImageView
         android:id="@+id/wrongImage3"
@@ -232,19 +237,24 @@
         android:id="@+id/correctImage4"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        android:layout_marginBottom="5dp"
         android:scaleType="centerInside"
-        app:srcCompat="@drawable/correct"
-        tools:layout_editor_absoluteX="283dp"
-        tools:layout_editor_absoluteY="330dp" />
+        app:layout_constraintBottom_toTopOf="@+id/organicBin"
+        app:layout_constraintEnd_toEndOf="@+id/organicBin"
+        app:layout_constraintStart_toStartOf="@+id/organicBin"
+        app:srcCompat="@drawable/correct" />
 
     <ImageView
         android:id="@+id/correctImage2"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        android:layout_marginBottom="5dp"
         android:scaleType="centerInside"
-        app:srcCompat="@drawable/correct"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="330dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/wrongImage2"
+        app:layout_constraintEnd_toEndOf="@+id/plasticBin"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintStart_toStartOf="@+id/plasticBin"
+        app:srcCompat="@drawable/correct" />
 
     <TextView
         android:id="@+id/deleteTitle"
