@@ -14,10 +14,13 @@ import android.media.SoundPool;
 import android.os.Build;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class GameView extends SurfaceView implements Runnable {
 
@@ -40,6 +43,10 @@ public class GameView extends SurfaceView implements Runnable {
     public static float speedRation;
     MediaPlayer mediaPlayer;
     private File files;
+    private boolean infected;
+    private boolean isUpdated, showAntivirus, posSet, monitorAntivirus;
+    private Antivirus antivirus;
+    private int antivirusPosX, antivirusPosY, rounds;
 
     public GameView(GameActivity activity, int screenX, int screenY) {
         super(activity);
@@ -98,15 +105,18 @@ public class GameView extends SurfaceView implements Runnable {
         random = new Random();
 
         files = new File(getResources());
-        System.out.println(files.file1.getHeight());
+        antivirus = new Antivirus(200, getResources());
+
         mediaPlayer = MediaPlayer.create(activity, R.raw.game1music);
         if(!prefs.getBoolean("soundMuted", false)){
             mediaPlayer.start();
         }
+        monitorAntivirus = true;
     }
 
     @Override
     public void run() {
+        monitorAntTask();
         while (isPlaying) {
             if(!mediaPlayer.isPlaying() && (!prefs.getBoolean("soundMuted", false))){
                 mediaPlayer.start();
@@ -118,16 +128,6 @@ public class GameView extends SurfaceView implements Runnable {
     }
 
     private void update () {
-        /*background1.x -= 2.5 * screenRatioX;
-        background2.x -= 2.5 * screenRatioX;
-
-        if (background1.x + background1.background.getWidth() < 0) {
-            background1.x = screenX;
-        }
-
-        if (background2.x + background2.background.getWidth() < 0) {
-            background2.x = screenX;
-        }*/
 
         if (flight.isGoingUp)
             flight.y -= 30 * screenRatioY;
@@ -164,17 +164,13 @@ public class GameView extends SurfaceView implements Runnable {
 
         for (Bullet bullet : trash)
             bullets.remove(bullet);
-
+        boolean add = false;
         for (Malware malware : malwares) {
 
             malware.x -= malware.speed;
 
             if (malware.x + malware.width < 0) {
-
-                if (!malware.wasShot) {
-                    isGameOver = true;
-                    return;
-                }
+                add = true;
                 int bound = (int) (speedRation * 0.5);
                 malware.speed = random.nextInt(bound);
 
@@ -184,9 +180,7 @@ public class GameView extends SurfaceView implements Runnable {
                 malware.y = random.nextInt(screenY - (int)(malware.height * 1.25));
                 malware.wasShot = false;
             }
-
         }
-
     }
 
     private void draw () {
@@ -202,23 +196,33 @@ public class GameView extends SurfaceView implements Runnable {
             for (Malware malware : malwares){
                 if(malware.x >= 0){
                     if(malware.x <= GameActivity.point.x/6){
-                        rectPaint.setColor(Color.parseColor("#f05a4d"));
+                        if(!infected){
+                            delay(5, "gameover");
+                        }
+                        infected = true;
                         break;
-                    }
-                    else{
-                        rectPaint.setColor(Color.parseColor("#ffffff"));
                     }
                 }
 
             }
+            if(infected){
+                rectPaint.setColor(Color.parseColor("#f05a4d"));
+            }
+            else{
+                rectPaint.setColor(Color.parseColor("#ffffff"));
+            }
             canvas.drawRect(new Rect(0, 0, GameActivity.point.x/6, GameActivity.point.y), rectPaint);
+
             for (Malware malware : malwares)
                 canvas.drawBitmap(malware.getMalware(), malware.x, malware.y, paint);
 
-            System.out.println(activity.point.y*3/8 - (File.iconSize/2));
             canvas.drawBitmap(files.file1, GameActivity.point.x/6/2-(File.iconSize/2), GameActivity.point.y/8-(File.iconSize/2), paint);
             canvas.drawBitmap(files.file2, GameActivity.point.x/6/2-(File.iconSize/2), GameActivity.point.y*3/8-(File.iconSize/2), paint);
             canvas.drawBitmap(files.file3, GameActivity.point.x/6/2-(File.iconSize/2), GameActivity.point.y*5/8-(File.iconSize/2), paint);
+
+            if(showAntivirus){
+                canvas.drawBitmap(antivirus.antivirus, 1080, 400, paint);
+            }
 
             if (isGameOver) {
                 isPlaying = false;
@@ -299,6 +303,11 @@ public class GameView extends SurfaceView implements Runnable {
                 if (event.getX() < screenX / 2) {
                     flight.isGoingUp = true;
                 }
+
+                if(event.getX() >= antivirus.x && event.getX() <= antivirus.x + 200  && event.getY() >= antivirus.y && event.getY() <= antivirus.y + 200){
+                    isUpdated = true;
+                    showAntivirus = false;
+                }
                 break;
             case MotionEvent.ACTION_UP:
                 flight.isGoingUp = false;
@@ -320,5 +329,41 @@ public class GameView extends SurfaceView implements Runnable {
         bullet.y = flight.y + (int) (flight.height * 0.15);
         bullets.add(bullet);
 
+    }
+
+    public void delay(int s, String type){
+        new Thread(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(s);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if(type=="antivirus"){
+                showAntivirus = false;
+            }
+            else{
+                if(infected && !isUpdated){
+                    isGameOver=true;
+                }
+            }
+
+        }).start();
+    }
+    public void monitorAntTask(){
+        new Thread(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            if(showAntivirus){
+                showAntivirus = false;
+            }
+            else{
+                showAntivirus = true;
+            }
+
+        }).start();
     }
 }
