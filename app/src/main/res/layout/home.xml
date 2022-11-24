@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/relativeLayout"
@@ -71,78 +68,34 @@
             app:layout_constraintTop_toTopOf="@+id/rectangle_1" />
 
 
-
-
-
-
-
-
-
-
-
-
-        <View
-            android:id="@+id/rectangle_3"
-            android:layout_width="57dp"
-            android:layout_height="41dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="25dp"
-            android:background="@drawable/rect3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/son_1" />
-
         <View
             android:id="@+id/son_1"
-            android:layout_width="69dp"
-            android:layout_height="69dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/son1"
-            app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
-            app:layout_constraintStart_toStartOf="@+id/rectangle_3"
-            app:layout_constraintTop_toTopOf="parent" /><![CDATA[
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-
-
-
-
-    />
-
-
-
-    ]]>
-
-        <View
+        <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/rectangle_4"
-            android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_width="325dp"
+            android:layout_height="287dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="44dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/rectbigb"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.76"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rectangle_1" />
-
-        <View
-            android:id="@+id/image_2"
-            android:layout_width="match_parent"
-            android:layout_height="259dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:background="@drawable/img2"
-            app:layout_constraintBottom_toBottomOf="@+id/rectangle_4"
-            app:layout_constraintEnd_toEndOf="@+id/rectangle_4"
-            app:layout_constraintHorizontal_bias="0.516"
-            app:layout_constraintStart_toStartOf="@+id/rectangle_4"
-            app:layout_constraintTop_toTopOf="@+id/rectangle_4"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_1"
+            app:lottie_rawRes="@raw/robot"
+            app:lottie_autoPlay="true"
+            />
 
         <View
             android:id="@+id/rectangle_5"
@@ -177,15 +130,19 @@
 
         <TextView
             android:id="@+id/game"
-            android:layout_width="194dp"
-            android:layout_height="65dp"
+            android:layout_width="183dp"
+            android:layout_height="58dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
             android:fontFamily="@font/gilroyb"
             android:gravity="top"
+
             android:text="GAME"
             android:textAppearance="@style/game"
+            android:textSize="50sp"
             app:layout_constraintBottom_toBottomOf="@+id/rectangle_5"
             app:layout_constraintEnd_toEndOf="@+id/rectangle_5"
             app:layout_constraintTop_toTopOf="@+id/rectangle_5"

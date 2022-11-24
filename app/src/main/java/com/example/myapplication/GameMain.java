@@ -132,23 +132,19 @@ public class GameMain extends AppCompatActivity {
     }
 
     public void createGameOverDialog(){
-        gameOverDialog = new AlertDialog.Builder(this);
-        final View gameOverPopupView = getLayoutInflater().inflate(R.layout.activity_gameover,null);
-        gameOverDialog.setView(gameOverPopupView);
-        dialog = gameOverDialog.create();
-        dialog.show();
+        startActivity(new Intent(GameMain.this, Newcomer.class));
+        finish();
 
-        imageView = (ImageView) gameOverPopupView.findViewById(R.id.replay);
-        scoreView = (TextView) gameOverPopupView.findViewById(R.id.score);
-        scoreView.setText("Score: "+ GameView.score);
-        GameView.score = 0;
+        //scoreView = (TextView) gameOverPopupView.findViewById(R.id.score);
+     //   scoreView.setText("Score: "+ GameView.score);
+       // GameView.score = 0;
 
-        imageView.setOnClickListener(new View.OnClickListener(){
+     /*   imageView.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void onClick(View v){
                 dialog.dismiss();
             }
-        });
+        });*/
 
     }
 }

@@ -303,6 +303,7 @@ public class levelTwoGame extends AppCompatActivity {
         garbageItemList.add(new GarbageItem(R.drawable.pdf,GarbageType.PLASTICS));
         garbageItemList.add(new GarbageItem(R.drawable.folder,GarbageType.PLASTICS));
         garbageItemList.add(new GarbageItem(R.drawable.google_docs,GarbageType.PLASTICS));
+        garbageItemList.add(new GarbageItem(R.drawable.antivirus1,GarbageType.GLASS));
         setCurrentGarbageItem();
     }
 
@@ -469,7 +470,7 @@ public class levelTwoGame extends AppCompatActivity {
         LayoutInflater factory = LayoutInflater.from(levelTwoGame.this);
         final View view = factory.inflate(R.layout.sample, null);
         alerted.setView(view);
-        alerted.setNeutralButton("Try Again", new DialogInterface.OnClickListener() {
+        alerted.setNeutralButton("", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dlg, int something) {
 
             }
@@ -482,11 +483,13 @@ public class levelTwoGame extends AppCompatActivity {
         LayoutInflater factory = LayoutInflater.from(levelTwoGame.this);
         final View view = factory.inflate(R.layout.sample, null);
         alerted.setView(view);
-        alerted.setNeutralButton("Try Again", new DialogInterface.OnClickListener() {
+        alerted.setNeutralButton("Click Here", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dlg, int something) {
 
             }
-        });
+        }
+
+        );
 
         alerted.show();}
 
@@ -495,7 +498,7 @@ public class levelTwoGame extends AppCompatActivity {
         LayoutInflater factory = LayoutInflater.from(levelTwoGame.this);
         final View view = factory.inflate(R.layout.sample, null);
         alerted.setView(view);
-        alerted.setNeutralButton("Try Again", new DialogInterface.OnClickListener() {
+        alerted.setNeutralButton("Click Here", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dlg, int something) {
 
             }
@@ -508,7 +511,7 @@ public class levelTwoGame extends AppCompatActivity {
         LayoutInflater factory = LayoutInflater.from(levelTwoGame.this);
         final View view = factory.inflate(R.layout.sample, null);
         alerted.setView(view);
-        alerted.setNeutralButton("Try Again", new DialogInterface.OnClickListener() {
+        alerted.setNeutralButton("Click Here", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dlg, int something) {
 
             }

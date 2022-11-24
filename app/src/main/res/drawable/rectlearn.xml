@@ -10,13 +10,50 @@
     <group>
 
         <clip-path
-            android:pathData="M40 0H125C147.091 0 165 17.9086 165 40V120C165 142.091 147.091 160 125 160H40C17.9086 160 0 142.091 0 120V40C0 17.9086 17.9086 0 40 0Z"
+            android:pathData="M20 0H145C156.046 0 165 8.95431 165 20V140C165 151.046 156.046 160 145 160H20C8.95431 160 0 151.046 0 140V20C0 8.95431 8.95431 0 20 0Z"
             />
 
-        <path
-            android:pathData="M0 0V160H165V0"
-            android:fillColor="#FDF2FD"
-            />
+        <group
+            android:translateX="1"
+            android:translateY="0"
+            android:pivotX="82.5"
+            android:pivotY="80"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:rotation="90"
+            >
+
+            <path
+                android:pathData="M0 0V160H165V0"
+                >
+
+                <aapt:attr name="android:fillColor">
+
+                    <gradient
+                        android:type="linear"
+                        android:startX="41.25"
+                        android:startY="80"
+                        android:endX="123.75"
+                        android:endY="80"
+                        >
+
+                        <item
+                            android:color="#FFFFFF"
+                            android:offset="0"
+                            />
+
+                        <item
+                            android:color="#FFD4FF"
+                            android:offset="1"
+                            />
+
+                    </gradient>
+
+                </aapt:attr>
+
+            </path>
+
+        </group>
 
     </group>
 

@@ -41,8 +41,9 @@
             60sp
         </item>
 
+
         <item name="android:textColor">
-            #75C8FF
+            #007ACB
         </item>
 
     </style>
@@ -173,6 +174,28 @@
 
         <item name="android:textColor">
             #718AF4
+        </item>
+
+    </style>
+    <style name="install_kee">
+
+        <item name="android:textSize">
+            39.82sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+    <style name="play_quiz">
+
+        <item name="android:textSize">
+            36.88sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
         </item>
 
     </style>

@@ -1,6 +1,7 @@
 
 package com.example.myapplication;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
@@ -16,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
         // on below line we are configuring our window to full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        Intent svc=new Intent(this, BackgroundSoundService.class);
+        startService(svc); //OR stopService(svc);
         setContentView(R.layout.activity_main);
-        
         // on below line we are calling handler to run a task
         // for specific time interval
         new Handler().postDelayed(new Runnable() {

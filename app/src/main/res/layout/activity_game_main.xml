@@ -8,6 +8,7 @@
     android:padding="16dp"
     tools:context=".GameMain">
 
+
     <TextView
         android:id="@+id/heading"
         android:layout_width="wrap_content"
@@ -15,25 +16,30 @@
         android:layout_below="@id/level"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
-        android:fontFamily="@font/gilroym"
-        android:text="Kill those Viruses to protect your data"
+        android:fontFamily="@font/gilroyb"
+        android:text="Kill Viruses and Update Anitvirus"
         android:textColor="#fff"
-        android:textSize="22sp" />
+        android:textSize="28sp" />
 
     <ImageView
         android:id="@+id/worm"
         android:layout_width="140dp"
         android:layout_height="180dp"
+        android:layout_centerVertical="true"
         android:layout_marginStart="100dp"
-        android:layout_centerVertical="true"
         android:src="@drawable/shooter1" />
-    <ImageView
+
+
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/play"
-        android:layout_width="180dp"
-        android:layout_height="140dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/play_icon" />
+        android:layout_width="280dp"
+        android:layout_height="200dp"
+
+        android:layout_centerInParent="true"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/play" />
+
 
     <TextView
         android:id="@+id/level"
@@ -84,6 +90,18 @@
         android:layout_height="36dp"
         android:layout_alignParentBottom="true"
         android:src="@drawable/ic_volume_up_black_24dp" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="200dp"
+        android:layout_height="249dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="33dp"
+        app:layout_constraintVertical_bias="1.0"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/robot" />
 
     <ImageView
         android:id="@+id/back"

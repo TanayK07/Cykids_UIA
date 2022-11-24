@@ -25,32 +25,21 @@ tools:context=".Level_1_waiting"
 
     <View
         android:id="@+id/icons8_chec"
-        android:layout_width="119dp"
-        android:layout_height="111.07dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="130dp"
-        android:background="@drawable/check"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.093"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/drag_drop" />
-
-    <View
-        android:id="@+id/icons8_chec2"
-        android:layout_width="100dp"
+        android:layout_width="112dp"
         android:layout_height="107dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="130dp"
-        android:background="@drawable/coins"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="240dp"
+        android:background="@drawable/check"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/drag_drop2" />
+        app:layout_constraintTop_toBottomOf="@+id/drag_drop"
+        app:layout_constraintVertical_bias="0.162" />
 
     <TextView
         android:id="@+id/some_id"
@@ -104,55 +93,49 @@ tools:context=".Level_1_waiting"
 
     <TextView
         android:id="@+id/drag_drop"
-        android:layout_width="378dp"
-        android:layout_height="87dp"
+        android:layout_width="377dp"
+        android:layout_height="72dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="168dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/gilroyb"
         android:gravity="top"
         android:text="Drag and Drop"
         android:textAppearance="@style/drag_drop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_3" />
 
-    <TextView
-        android:id="@+id/drag_drop2"
-        android:layout_width="289dp"
-        android:layout_height="71dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:fontFamily="@font/gilroyb"
-        android:gravity="top"
-        android:text="Earn points "
-        android:textAppearance="@style/drag_drop"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="184dp"
+        android:layout_height="199dp"
+        app:layout_constraintBottom_toTopOf="@+id/drag_drop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icons8_chec" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.571"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/robot" />
 
-    <TextView
-        android:id="@+id/drag_drop3"
-        android:layout_width="289dp"
-        android:layout_height="71dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/playbtn"
+        android:layout_width="600dp"
+        android:layout_height="240dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
-        android:fontFamily="@font/gilroyb"
-        android:gravity="top"
-        android:text="Stay Safe! "
-        android:textAppearance="@style/drag_drop"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icons8_chec2" />
+        app:layout_constraintTop_toBottomOf="@+id/icons8_chec"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/play" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

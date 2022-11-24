@@ -5,12 +5,16 @@
       <map>
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/drawable/ic_grid.xml" value="0.1" />
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/drawable/rect_lev1.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/drawable/rect_new_q.xml" value="0.188" />
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/drawable/rect_vio.xml" value="0.187" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/drawable/rectg.xml" value="0.188" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/drawable/rectlearn.xml" value="0.188" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/drawable/rectq.xml" value="0.188" />
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/about_us.xml" value="0.1796875" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_game_main.xml" value="0.1" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_gameover.xml" value="0.1796875" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_level_two_game.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_game_main.xml" value="0.22" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_gameover.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_level_two_game.xml" value="0.1" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_questions.xml" value="0.1796875" />
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_quiz.xml" value="0.165625" />
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/activity_result.xml" value="0.1796875" />
@@ -20,7 +24,7 @@
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/home.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/learn_basic.xml" value="0.1796875" />
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/learnmore.xml" value="0.1" />
-        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/level1_waitingscreen.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/level1_waitingscreen.xml" value="0.1" />
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/memory_game.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/memory_game_begin.xml" value="0.1" />
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Cykids_UIA_adjk/app/src/main/res/layout/quiz_page.xml" value="0.1796875" />

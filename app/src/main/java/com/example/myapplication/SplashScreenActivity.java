@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,12 +19,13 @@ import java.util.concurrent.TimeUnit;
 public class SplashScreenActivity extends AppCompatActivity {
     public static SharedPreferences prefs;
     public long diff;
+    MediaPlayer mediaPlayer;
+    SoundPool soundPool;
     public static boolean isTimeUp = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-        SoundPool soundPool;
         if (Build.VERSION.SDK_INT
                 >= Build.VERSION_CODES.LOLLIPOP) {
             AudioAttributes
@@ -96,21 +98,31 @@ public class SplashScreenActivity extends AppCompatActivity {
         View btn_quiz=(View)findViewById(R.id.rectangle_6);
         View btn_about=(View)findViewById(R.id.rectanglaboutus);
         View btn_learn=(View)findViewById(R.id.rectangle_7);
-
+        Intent svc=new Intent(this, BackgroundSoundService.class);
+        startService(svc);
         btn_play.setOnClickListener(v ->
-        {startActivity(new Intent(SplashScreenActivity.this,Game_page.class));
+        {   stopService(svc);
+            startActivity(new Intent(SplashScreenActivity.this,Game_page.class));
             soundPool.play(button_music, 1, 1, 0, 0, 1);
             });
-        btn_quiz.setOnClickListener(v -> {startActivity(new Intent(SplashScreenActivity.this,Quiz_page.class));
+        btn_quiz.setOnClickListener(v -> { stopService(svc);
+            startActivity(new Intent(SplashScreenActivity.this,Quiz_page.class));
             soundPool.play(button_music, 1, 1, 0, 0, 1);
             });
-        btn_about.setOnClickListener(v -> {startActivity(new Intent(SplashScreenActivity.this,About_us.class));
+        btn_about.setOnClickListener(v -> {stopService(svc);
+            startActivity(new Intent(SplashScreenActivity.this,About_us.class));
             soundPool.play(button_music, 1, 1, 0, 0, 1);
             });
-        btn_learn.setOnClickListener(v -> {startActivity(new Intent(SplashScreenActivity.this, Learner.class));
+        btn_learn.setOnClickListener(v -> {stopService(svc);
+            startActivity(new Intent(SplashScreenActivity.this, Learner.class));
             soundPool.play(button_music, 1, 1, 0, 0, 1);
             });
-
+//        while (true) {
+//            if (!mediaPlayer.isPlaying()) {
+//                mediaPlayer.start();
+//            }
+//        }
+//        System.out.println(mediaPlayer.isPlaying());
     }
 
     public void overPlayedDialog () {

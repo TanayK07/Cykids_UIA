@@ -8,14 +8,17 @@
     android:background="#DDDEFF"
     >
 
+
+
+
     <View
         android:id="@+id/rectangle_2"
-        android:layout_width="336dp"
-        android:layout_height="405dp"
+        android:layout_width="341dp"
+        android:layout_height="440dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/rect_lev1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -164,7 +167,7 @@
         android:layout_height="84dp"
         android:layout_below="@+id/timer"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="96dp"
         android:contentDescription="Save"
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="@+id/rectangle_2"
@@ -227,7 +230,7 @@
         android:id="@+id/paperBin"
         android:layout_width="98dp"
         android:layout_height="84dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="96dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
         app:layout_constraintTop_toTopOf="@+id/rectangle_2"
@@ -285,8 +288,8 @@
 
     <ImageView
         android:id="@+id/garbageImage"
-        android:layout_width="70dp"
-        android:layout_height="65dp"
+        android:layout_width="102dp"
+        android:layout_height="93dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
