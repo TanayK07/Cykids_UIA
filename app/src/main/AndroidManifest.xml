@@ -87,6 +87,8 @@
             android:name=".GameActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.noActionBar" />
+        <service android:name=".BackgroundSoundService" android:exported="true">
+        </service>
     </application>
 
 </manifest>
