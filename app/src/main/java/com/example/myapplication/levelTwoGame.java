@@ -14,6 +14,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -195,9 +196,24 @@ public class levelTwoGame extends AppCompatActivity {
 
         }
         AlertDialog alert = builder.create();
-        alert.setTitle("Thank you for playing");
-        alert.show();
-    }
+        //alert.setTitle("Thank you for playing");
+        AlertDialog.Builder alerted = new AlertDialog.Builder(levelTwoGame.this);
+        LayoutInflater factory = LayoutInflater.from(levelTwoGame.this);
+        final View view = factory.inflate(R.layout.sample1, null);
+        alerted.setView(view);
+        alerted.setNeutralButton("Quiz Now! Earn Points", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dlg, int something) {
+                levelTwoGame.this.finish();
+                Intent intent = new Intent(levelTwoGame.this, Quiz_page.class);
+                startActivity(intent);
+
+
+            }
+        });
+
+        alerted.show();}
+       // alert.show();
+
 
     private void stopTimer() {
         countDownTimer.cancel();
@@ -391,36 +407,56 @@ public class levelTwoGame extends AppCompatActivity {
     }
 
     public void displayInstallDialog () {
-        new AlertDialog.Builder(this)
-                .setTitle("SORRY!")
-                .setMessage("This is the zone where you need to drop some applications that can protect you from virus and malicious attack, drag and drop apps, Enjoy!!!")
-                .setNegativeButton(android.R.string.no, null)
-                .setPositiveButton(android.R.string.yes, null).create().show();
-    }
+        AlertDialog.Builder alerted = new AlertDialog.Builder(levelTwoGame.this);
+        LayoutInflater factory = LayoutInflater.from(levelTwoGame.this);
+        final View view = factory.inflate(R.layout.sample, null);
+        alerted.setView(view);
+        alerted.setNeutralButton("Try Again", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dlg, int something) {
+
+            }
+        });
+
+        alerted.show();}
 
     public void displayBackupDialog () {
-        new AlertDialog.Builder(this)
-                .setTitle("SORRY!")
-                .setMessage("This is the zone where you need to drop some applications that can protect you from virus and malicious attack, drag and drop apps, Enjoy!!!")
-                .setNegativeButton(android.R.string.no, null)
-                .setPositiveButton(android.R.string.yes, null).create().show();
-    }
+        AlertDialog.Builder alerted = new AlertDialog.Builder(levelTwoGame.this);
+        LayoutInflater factory = LayoutInflater.from(levelTwoGame.this);
+        final View view = factory.inflate(R.layout.sample, null);
+        alerted.setView(view);
+        alerted.setNeutralButton("Try Again", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dlg, int something) {
+
+            }
+        });
+
+        alerted.show();}
 
     public void displayEncryptDialog () {
-        new AlertDialog.Builder(this)
-                .setTitle("SORRY!")
-                .setMessage("This is the zone where you need to drop some applications that can protect you from virus and malicious attack, drag and drop apps, Enjoy!!!")
-                .setNegativeButton(android.R.string.no, null)
-                .setPositiveButton(android.R.string.yes, null).create().show();
-    }
+        AlertDialog.Builder alerted = new AlertDialog.Builder(levelTwoGame.this);
+        LayoutInflater factory = LayoutInflater.from(levelTwoGame.this);
+        final View view = factory.inflate(R.layout.sample, null);
+        alerted.setView(view);
+        alerted.setNeutralButton("Try Again", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dlg, int something) {
+
+            }
+        });
+
+        alerted.show();}
 
     public void displayClearDialog () {
-        new AlertDialog.Builder(this)
-                .setTitle("SORRY!")
-                .setMessage("This is the zone where you need to drop some applications that can protect you from virus and malicious attack, drag and drop apps!!!?")
-                .setNegativeButton(android.R.string.no, null)
-                .setPositiveButton(android.R.string.yes, null).create().show();
-    }
+        AlertDialog.Builder alerted = new AlertDialog.Builder(levelTwoGame.this);
+        LayoutInflater factory = LayoutInflater.from(levelTwoGame.this);
+        final View view = factory.inflate(R.layout.sample, null);
+        alerted.setView(view);
+        alerted.setNeutralButton("Try Again", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dlg, int something) {
+
+            }
+        });
+
+        alerted.show();}
 
     @Override
     public void onBackPressed() {
@@ -431,10 +467,10 @@ public class levelTwoGame extends AppCompatActivity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
                         stopTimer();
-                        Toast.makeText(getApplicationContext(),"See you soon",
+                        Toast.makeText(getApplicationContext(),"TRY QUIZZING!",
                                 Toast.LENGTH_SHORT).show();
                         levelTwoGame.this.finish();
-                        Intent intent = new Intent(levelTwoGame.this, StartGameActivity.class);
+                        Intent intent = new Intent(levelTwoGame.this, Quiz_page.class);
                         startActivity(intent);
                     }
                 }).create().show();
