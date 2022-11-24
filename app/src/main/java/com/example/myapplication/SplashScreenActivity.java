@@ -1,7 +1,10 @@
 package com.example.myapplication;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -9,6 +12,7 @@ import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -95,6 +99,39 @@ public class SplashScreenActivity extends AppCompatActivity {
         }
         isTimeUp = false;
 */
+        View mDialogButton = (View) findViewById(R.id.son_1);
+        Dialog dialog = new Dialog(SplashScreenActivity.this);
+        mDialogButton.setOnClickListener(v->{
+            soundPool.play(button_music, 1, 1, 0, 0, 1);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog.setContentView(R.layout.dialogbox);
+            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            dialog.setCancelable(false);
+            dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
+
+            dialog.findViewById(R.id.age1).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    soundPool.play(button_music, 1, 1, 0, 0, 1);
+                    dialog.dismiss();
+                }
+            });
+            dialog.findViewById(R.id.age2).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    soundPool.play(button_music, 1, 1, 0, 0, 1);
+                    dialog.dismiss();
+                }
+            });
+            dialog.findViewById(R.id.age3).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    soundPool.play(button_music, 1, 1, 0, 0, 1);
+                    dialog.dismiss();
+                }
+            });
+            dialog.show();
+        });
         View btn_play=(View)findViewById(R.id.rectangle_5);
         View btn_quiz=(View)findViewById(R.id.rectangle_6);
         View btn_about=(View)findViewById(R.id.rectanglaboutus);
@@ -102,7 +139,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         ImageView buttonLeaderBoard = (ImageView)findViewById(R.id.rectangle_1);
         Intent svc=new Intent(this, BackgroundSoundService.class);
         startService(svc);
-        buttonLeaderBoard.setOnClickListener(v -> {startActivity(new Intent(SplashScreenActivity.this, leaderboard.class));
+        buttonLeaderBoard.setOnClickListener(v -> {stopService(svc);startActivity(new Intent(SplashScreenActivity.this, leaderboard.class));
             soundPool.play(button_music, 1, 1, 0, 0, 1);
         });
         btn_play.setOnClickListener(v ->

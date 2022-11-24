@@ -17,6 +17,8 @@ public class Quiz_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_page);
         SoundPool soundPool,backsoundPool;
+        Intent svc=new Intent(this, BackgroundSoundService.class);
+        startService(svc);
         if (Build.VERSION.SDK_INT
                 >= Build.VERSION_CODES.LOLLIPOP) {
             AudioAttributes
@@ -76,6 +78,7 @@ public class Quiz_page extends AppCompatActivity {
             btn_back.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    stopService(svc);
                     startActivity(new Intent(Quiz_page.this,SplashScreenActivity.class));
                     backsoundPool.play(back_button_music,1,1,0,0,1);
                 }
