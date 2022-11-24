@@ -9,6 +9,7 @@ import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -98,8 +99,12 @@ public class SplashScreenActivity extends AppCompatActivity {
         View btn_quiz=(View)findViewById(R.id.rectangle_6);
         View btn_about=(View)findViewById(R.id.rectanglaboutus);
         View btn_learn=(View)findViewById(R.id.rectangle_7);
+        ImageView buttonLeaderBoard = (ImageView)findViewById(R.id.rectangle_1);
         Intent svc=new Intent(this, BackgroundSoundService.class);
         startService(svc);
+        buttonLeaderBoard.setOnClickListener(v -> {startActivity(new Intent(SplashScreenActivity.this, leaderboard.class));
+            soundPool.play(button_music, 1, 1, 0, 0, 1);
+        });
         btn_play.setOnClickListener(v ->
         {   stopService(svc);
             startActivity(new Intent(SplashScreenActivity.this,Game_page.class));

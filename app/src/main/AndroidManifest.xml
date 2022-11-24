@@ -79,6 +79,7 @@
         <activity android:name=".Quiz_play_2_display"></activity>
         <activity android:name=".memory_game_level1"></activity>
         <activity android:name=".Level_1_waiting"></activity>
+        <activity android:name=".leaderboard"></activity>
         <activity android:name=".Newcomer"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.noActionBar"
