@@ -87,15 +87,32 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="22dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.76"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rectangle_1"
-            app:lottie_rawRes="@raw/robot"
             app:lottie_autoPlay="true"
-            />
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/robot" />
+
+        <TextView
+            android:id="@+id/hi_i_am_cyb"
+            android:layout_width="319dp"
+            android:layout_height="77dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/gilroyb"
+            android:gravity="top"
+            android:text="@string/hi_i_am_cyb"
+            android:textAppearance="@style/hi_i_am_cyb"
+            app:layout_constraintBottom_toTopOf="@+id/rectangle_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <View
             android:id="@+id/rectangle_5"
@@ -104,13 +121,13 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="64dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/rectg"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rectangle_4"/>
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_4" />
 
         <View
             android:id="@+id/asldk_01_1"
@@ -146,8 +163,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/rectangle_5"
             app:layout_constraintEnd_toEndOf="@+id/rectangle_5"
             app:layout_constraintTop_toTopOf="@+id/rectangle_5"
-            app:layout_constraintVertical_bias="0.26" /><![CDATA[
-    />
+            app:layout_constraintVertical_bias="0.26" />
 
 
 
@@ -158,7 +174,7 @@
 
 
 
-    ]]>
+    
 
         <View
             android:id="@+id/rectangle_6"

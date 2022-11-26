@@ -44,10 +44,11 @@
             android:id="@+id/age1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
+            android:layout_alignEnd="@+id/age_1"
+            android:layout_marginStart="0dp"
             android:layout_marginLeft="60dp"
             android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginEnd="33dp"
             android:layout_marginBottom="30dp"
             android:fontFamily="@font/gilroym"
             android:text="4-8"
@@ -62,11 +63,12 @@
             android:layout_marginLeft="120dp"
             android:id="@+id/age_2"
             android:background="@drawable/rect1"/>
+
         <TextView
             android:id="@+id/age2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
@@ -74,25 +76,27 @@
             android:fontFamily="@font/gilroym"
             android:text="8-12"
             android:textColor="@color/white"
+            android:textFontWeight="@integer/material_motion_duration_long_1"
             android:textSize="25sp"
-            android:textStyle="bold"
-            android:textFontWeight="@integer/material_motion_duration_long_1"/>
+            android:textStyle="bold" />
 
         <View
+            android:id="@+id/age_3"
             android:layout_width="85dp"
             android:layout_height="50dp"
-            android:id="@+id/age_3"
             android:layout_marginStart="20dp"
-            android:layout_toRightOf="@id/age_2"
+            android:layout_marginLeft="53dp"
             android:layout_marginTop="20dp"
 
+            android:layout_toRightOf="@id/age_2"
             android:background="@drawable/rect1" />
 
         <TextView
             android:id="@+id/age3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
@@ -100,9 +104,9 @@
             android:fontFamily="@font/gilroym"
             android:text="12-16"
             android:textColor="@color/white"
+            android:textFontWeight="@integer/material_motion_duration_long_1"
             android:textSize="25sp"
-            android:textStyle="bold"
-            android:textFontWeight="@integer/material_motion_duration_long_1"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

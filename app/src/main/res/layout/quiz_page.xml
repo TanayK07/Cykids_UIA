@@ -43,6 +43,7 @@
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_9"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_9"
+        app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="@+id/rectangle_9"
         app:layout_constraintTop_toTopOf="@+id/rectangle_9" />
 
@@ -112,8 +113,8 @@
 
     <ImageView
         android:id="@+id/asldk_01_2"
-        android:layout_width="221dp"
-        android:layout_height="271dp"
+        android:layout_width="252dp"
+        android:layout_height="296dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
@@ -183,6 +184,7 @@
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_8"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_8"
+        app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="@+id/rectangle_8"
         app:layout_constraintTop_toTopOf="@+id/rectangle_8" />
 

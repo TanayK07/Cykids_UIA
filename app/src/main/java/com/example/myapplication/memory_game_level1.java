@@ -18,6 +18,7 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -146,9 +147,14 @@ animatorSet.start();*/
             @Override
             public void onClick(View view) {
                 if(choices[0].size()<4){
-                    Toast toast = Toast.makeText(getApplicationContext(),
-                            "Please select 4 tiles.",
-                            Toast.LENGTH_SHORT);
+                    Toast toast = new Toast(getApplicationContext());
+                    ImageView view1 = new ImageView(getApplicationContext());
+                    view1.setImageResource(R.drawable.four);
+
+                    // setting view to toast
+                    toast.setView(view1);
+
+                    // showing toast
                     toast.show();
                 }
                 else{
@@ -166,18 +172,27 @@ animatorSet.start();*/
                     }
                     if(check){
                         //PASS
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "Approved.",
-                                Toast.LENGTH_SHORT);
+                        Toast toast = new Toast(getApplicationContext());
+                        ImageView view1 = new ImageView(getApplicationContext());
+                        view1.setImageResource(R.drawable.correct);
+
+                        // setting view to toast
+                        toast.setView(view1);
+
+                        // showing toast
                         toast.show();
-                        System.out.println("passed");
 
 
                     }
                     else{
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "Incorrect, try again.",
-                                Toast.LENGTH_SHORT);
+                        Toast toast = new Toast(getApplicationContext());
+                        ImageView view1 = new ImageView(getApplicationContext());
+                        view1.setImageResource(R.drawable.wrong);
+
+                        // setting view to toast
+                        toast.setView(view1);
+
+                        // showing toast
                         toast.show();
                         misc.animation(findViewById(R.id.imageView5),"rotation",0f,-360f,1000).start();
                     }

@@ -22,12 +22,13 @@ public class Newcomer extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Newcomer.this, Quiz_page.class);
                 startActivity(intent);
+
             }
         });
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Newcomer.this, Game_page.class));
-                finish();
+                startActivity(new Intent(Newcomer.this, GameActivity.class));
+
             }
         });}}

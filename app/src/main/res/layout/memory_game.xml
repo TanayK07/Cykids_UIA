@@ -313,7 +313,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/gilroyextrabold"
         android:letterSpacing="0.15"
-        android:text="MEMORY TASK #1"
+        android:text="REMEMBER YOUR PASSWORD"
         android:textColor="#000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
