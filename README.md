@@ -11,7 +11,11 @@ fix poortly made age choosing button UI
 fix Leaderboard UI 
 
 Contributors 
+
 Daniel-Codemaster: Level 2 
+
 Lereko : Old structure and logic of Level 1 +Leaderboard 
+
 Sai Lahari: Sound function 
+
 Tanay: Rest
